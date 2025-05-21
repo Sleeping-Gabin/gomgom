@@ -1,0 +1,169 @@
+/* ---------- footer ---------- */
+/* ----- footer nav ----- */
+.footer-nav-outer {
+  height: 35px;
+  border-top: 1px solid #d9d9d9;
+}
+
+.footer-nav {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.footer-nav li {
+  display: inline-block;
+}
+
+.footer-nav .footer-menu {
+  float: left;
+}
+
+.footer-nav .footer-menu li a {
+  padding: 0 10px;
+  line-height: 35px;
+  font-size: 14px;
+}
+
+.footer-nav .footer-menu li:first-child a {
+  padding-left: 0;
+}
+
+.footer-nav .footer-menu li:hover a {
+  font-weight: 550;
+}
+
+.footer-nav .footer-sns {
+  float: right;
+}
+
+.footer-nav .footer-sns li i {
+  padding: 0 5px;
+  line-height: 35px;
+  color: #999;
+}
+
+.footer-nav .footer-sns li:last-child i {
+  padding-right: 0;
+}
+
+/* ----- footer ----- */
+.footer-outer {
+  background-color: #f8f8f8;
+}
+
+.footer {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 30px 0;
+  color: #2b2b2b;
+  overflow: hidden;
+}
+
+.footer .footer-btn {
+  border: 1px solid #2b2b2b;
+  color: #2b2b2b;
+  border-radius: 20px;
+}
+
+.footer .company-info {
+  float: left;
+}
+
+.footer .company-info .footer-logo {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.footer .company-info .company-txt {
+  margin-bottom: 20px;
+}
+
+.footer .company-info .company-txt p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer .company-info .company-txt p .divide-line {
+  margin: 0 5px;
+  font-size: 12px;
+}
+
+.footer .company-info .company-txt .footer-btn {
+  margin-left: 5px;
+  padding: 0 7px;
+  font-size: 12px;
+}
+
+.footer .company-info .copyright {
+  font-size: 14px;
+  color: #999;
+}
+
+.footer .customer-info {
+  float: right;
+}
+
+.footer .customer-info .community-btn-box {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.footer .customer-info .community-btn-box .footer-btn {
+  margin-right: 10px;
+  padding: 3px 15px;
+  font-size: 14px;
+}
+
+.footer .customer-info .customer-title {
+  font-size: 20px;
+}
+
+.footer .customer-info .customer-center {
+  width: 300px;
+  float: left;
+}
+
+.footer .customer-info .customer-center .call {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.footer .customer-info .customer-center .time {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer .customer-info .bank {
+  width: 250px;
+  font-size: 14px;
+  float: right;
+}
+
+/* ---------- top/bottom button ---------- */
+.fix-btn-box {
+  margin-top: -45px;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  right: 50px;
+}
+
+.fix-btn-box .fix-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f0f0f0;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.fix-btn-box .fix-btn:hover {
+  background-color: white;
+}
+
+.fix-btn-box .top-btn {
+  margin-bottom: 10px;
+}
