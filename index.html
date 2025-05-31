@@ -7,28 +7,33 @@
   
   <!-- favicon -->
   <link rel="icon" href="./favicon.png">
-
+  
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-
+  
   <!-- style sheet -->
   <link rel="stylesheet" href="./css/default.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/footer.css">
-
+  
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
   <!-- javascript -->
   <script src="./js/main.js"></script>
   <script src="./js/cart.js"></script>
+  <script src="./js/visual_main.js" defer></script>
 </head>
 <body>
   <!-- header -->
@@ -192,58 +197,55 @@
   </div>
 
   <!-- visual main -->
-  <input type="radio" name="visual-main" id="rad-visual-01" checked>
-  <input type="radio" name="visual-main" id="rad-visual-02">
-  <input type="radio" name="visual-main" id="rad-visual-03">
-  <div class="visual-main-frame">
-    <div class="indicator">
-      <label for="rad-visual-01"></label>
-      <label for="rad-visual-02"></label>
-      <label for="rad-visual-03"></label>
-    </div><!--indicator-->
-    <ul>
-      <li class="visual-main right-txt">
-        <div class="visual-img">
-          <label for="rad-visual-03" class="visual-left-arrow visual-arrow"><i class="fa-solid fa-angle-left"></i></label>
+  <div class="visual-main swiper">
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide right-txt">
+        <div class="visual-bg visual-bg-01">
           <div class="visual-txt">
             <p class="visual-title">몬스터랙/랙플러스 선반</p>
             <p class="visual-sub-title">원하는대로 구성 가능한 조립식 선반</p>
             <p class="visual-info">쉬운 조립과 자유로운 높이 조절로<br>공간에 딱 맞는 나만의 선반을 완성하세요</p>
-          </div><!--visual txt-->
-          <a href="./detail_page/detail_page.html" class="visual-enter-btn">자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
-          <label for="rad-visual-02" class="visual-right-arrow visual-arrow"><i class="fa-solid fa-angle-right"></i></label>
-          <img src="./images/visual_main_1.jpg" alt="비주얼 메인">
+          </div>
+          <a href="./detail_page/detail_page.html" class="visual-enter-btn" >자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
+          <div class="visual-img">
+            <img src="./images/visual_main_1.jpg" alt="비주얼 메인">
+          </div>
         </div>
-      </li><!--visual-main-->
-      <li class="visual-main left-txt">
-        <div class="visual-img">
-          <label for="rad-visual-01" class="visual-left-arrow visual-arrow"><i class="fa-solid fa-angle-left"></i></label>
+      </li>
+      <li class="swiper-slide left-txt">
+        <div class="visual-bg visual-bg-02">
           <div class="visual-txt">
             <p class="visual-title">가정의 달 이벤트</p>
             <p class="visual-sub-title">전 제품 배송비 할인</p>
             <p class="visual-info">5월 한 달만 진행되는 가정의 달 이벤트<br>배송비 최대 100% 할인을 누려보세요!</p>
-          </div><!--visual txt-->
-          <a href="#!" class="visual-enter-btn">자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
-          <label for="rad-visual-03" class="visual-right-arrow visual-arrow"><i class="fa-solid fa-angle-right"></i></label>
-          <img src="./images/visual_main_2.jpg" alt="비주얼 메인">
+          </div>
+          <a href="#!" class="visual-enter-btn" >자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
+          <div class="visual-img">
+            <img src="./images/visual_main_2.jpg" alt="비주얼 메인">
+          </div>
         </div>
-      </li><!--visual-main-->
-      <li class="visual-main left-txt">
-        <div class="visual-img">
-          <label for="rad-visual-02" class="visual-left-arrow visual-arrow"><i class="fa-solid fa-angle-left"></i></label>
+      </li>
+      <li class="swiper-slide left-txt">
+        <div class="visual-bg visual-bg-03">
           <div class="visual-txt">
             <p class="visual-title">신상품</p>
             <p class="visual-sub-title">도담 피에트 화장대</p>
             <p class="visual-info">거울을 닫으면 테이블로 사용 가능한 화장대<br>스툴도 활용하는 넓은 수납 공간까지</p>
-          </div><!--visual txt-->
-          <a href="./detail_page/detail_page.html" class="visual-enter-btn">자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
-          <label for="rad-visual-01" class="visual-right-arrow visual-arrow"><i class="fa-solid fa-angle-right"></i></label>
-          <img src="./images/visual_main_3.jpg" alt="비주얼 메인">
+          </div>
+          <a href="./detail_page/detail_page.html" class="visual-enter-btn" >자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
+          <div class="visual-img">
+            <img src="./images/visual_main_3.jpg" alt="비주얼 메인">
+          </div>
         </div>
-      </li><!--visual-main-->
+      </li>
     </ul>
-  </div>
 
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev swiper-button-hidden visual-btn"></div>
+    <div class="swiper-button-next swiper-button-hidden visual-btn"></div>
+  </div>
+  
   <!-- metaphor -->
   <div class="metaphor-box">
     <div class="metaphor">
@@ -311,7 +313,7 @@
       </a>
     </div><!--신상품-->
   </div><!--metaphor box-->
-
+  
   <!-- new -->
   <div class="section-title-box">
     <p class="section-title-txt">새로 들어온 상품</p>
@@ -322,95 +324,95 @@
     <div class="new-frame">
       <ul>
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/dw20056.jpg" alt="신상품11">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">구성: 원사랍장 / 거울장 / 원서랍장+거울장</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">우아미 클레식 800 장롱(원서랍장+거울장)</p>
             <p class="product-origin-price">380,000원</p>
             <p class="product-price"><span class="product-sale">40%</span>230,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/bm50156.jpg" alt="신상품12">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">선택: 어텀 부클레 스툴</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">어텀 부클레 스툴</p>
             <p class="product-origin-price">75,900원</p>
             <p class="product-price"><span class="product-sale">20%</span>60,720원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/kw30034.jpg" alt="신상품13">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 오크 / 화이트</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <ul class="product-color">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <ul class="product-color">
               <li class="oak"></li>
-                <li class="white"></li>  
+              <li class="white"></li>
             </ul>
             <p class="product-title">네이슨 오픈 수납장</p>
             <p class="product-origin-price">204,400원</p>
             <p class="product-price"><span class="product-sale">29%</span>146,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/ld30061.jpg" alt="신상품14">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">사이즈: 600 / 800</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">바오트 로이 강화 유리 거실테이블 원형 소파테이블 600/800</p>
             <p class="product-origin-price">80,000원</p>
             <p class="product-price"><span class="product-sale">41%</span>47,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/bl10042.jpg" alt="신상품15">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 아이보리 / 그레이</p>
               <p class="product-option-txt">매트리스: 낮은본넬 / 유로탑</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <ul class="product-color">
               <li class="ivory"></li>
               <li class="gray"></li>
@@ -418,22 +420,22 @@
             <p class="product-title">도담 뉴 저상형 패밀리침대</p>
             <p class="product-origin-price">499,000원</p>
             <p class="product-price"><span class="product-sale">59%</span>232,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/bl40120.jpg" alt="신상품1">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 내추럴 오크/그레이</p>
               <p class="product-option-txt">스툴: 선택 안함/내추럴 오크/그레이</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <ul class="product-color">
               <li class="gray"></li>  
               <li class="natural"></li>
@@ -441,41 +443,41 @@
             <p class="product-title">도담 피에트 화장대</p>
             <p class="product-origin-price">108,900원</p>
             <p class="product-price"><span class="product-sale">51%</span>58,900원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/lh20049.webp" alt="신상품2">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 메이플/베이지/오크</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">클린트2 거실장 180cm 북유럽형(3종 1택)</p>
             <p class="product-origin-price">128,000원</p>
             <p class="product-price"><span class="product-sale">17%</span>198,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/bd10036.jpg" alt="신상품3">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">사이즈: 슈퍼싱글 SS / 퀸 Q</p>
               <p class="product-option-txt">매트리스: 침대 프레임(매트리스 미포함) / 베이직 본넬매트 / 잇템 독립매트</p>
               <p class="product-option-txt">색상: 화이트 / 메이플 / 그레이</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <ul class="product-color">
               <li class="white"></li>  
               <li class="maple"></li>
@@ -484,78 +486,78 @@
             <p class="product-title">프린홈 브릴 LED 리노 평상 침대 SS/Q (매트 선택)</p>
             <p class="product-origin-price">339,000원</p>
             <p class="product-price"><span class="product-sale">41%</span>199,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/oh20053.webp" alt="신상품4">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 오크 / 월넛 / 화이트</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <ul class="product-color">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <ul class="product-color">
               <li class="oak"></li>  
               <li class="walnut"></li>
-                <li class="white"></li>
+              <li class="white"></li>
             </ul><!--product color-->
             <p class="product-title">유로 501 플랫 서재 5단 장식책장 1000</p>
             <p class="product-price">353,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/ds30032.jpg" alt="신상품5">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 월넛 / 아카시아 / 화이트</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">모던하임 2000 거울형 행거</p>
             <p class="product-origin-price">529,000원</p>
             <p class="product-price"><span class="product-sale">44%</span>294,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/bm10144.jpg" alt="신상품6">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">사이즈: SS</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">닐튼 플러스 수납침대 SS</p>
             <p class="product-price">459,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/or10059.jpg" alt="신상품7">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 내추럴+화이트 / 월넛+블랙</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <ul class="product-color">
               <li class="natural"></li>  
               <li class="walnut"></li>
@@ -563,39 +565,39 @@
             <p class="product-title">파로마 룬 미니 선반 철제 디와이 책상 1800</p>
             <p class="product-origin-price">250,000원</p>
             <p class="product-price"><span class="product-sale">50%</span>175,900원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/kl10058.jpg" alt="신상품8">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">구성: 기본형1000 / 선반형1000 / 기본형1200</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <p class="product-title">포더홈 반올 테이블 식탁 1000/1200</p>
             <p class="product-origin-price">188,300원</p>
             <p class="product-price"><span class="product-sale">59%</span>85,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/sd20027.jpg" alt="신상품9">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 화이트 / 아카시아</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
             <ul class="product-color">
               <li class="white"></li>
               <li class="ivory"></li>
@@ -603,36 +605,36 @@
             <p class="product-title">케이컴퍼니 LPM 이음 푸시 400도어 선반장</p>
             <p class="product-origin-price">103,000원</p>
             <p class="product-price"><span class="product-sale">23%</span>79,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
         <li class="new product">
-            <div class="product-img">
+          <div class="product-img">
             <img src="./images/product/lr10055.jpg" alt="신상품10">
-              <ul class="product-icon">
-                <li class="product-icon-img"></li>
-                <li class="product-icon-img"></li>
+            <ul class="product-icon">
               <li class="product-icon-img"></li>
-              </ul><!--product icon-->
-              <div class="product-option">
+              <li class="product-icon-img"></li>
+              <li class="product-icon-img"></li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 아이보리 / 베이지 / 탄</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <ul class="product-color">
-                <li class="ivory"></li>
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <ul class="product-color">
+              <li class="ivory"></li>
               <li class="beige"></li>
               <li class="tan-brown"></li>
-              </ul>
+            </ul>
             <p class="product-title">파로마 레아나 천연 면피가죽 3인용 가죽소파</p>
             <p class="product-origin-price">1,200,000원</p>
             <p class="product-price"><span class="product-sale">33%</span>79,000원</p>
-            </div><!--product txt-->
+          </div><!--product txt-->
         </li><!--new-->
       </ul>
     </div><!--new frame-->
     <i class="fa-solid fa-angle-right new-arrow new-right-arrow"></i>
   </section>
-
+  
   <!-- keyword -->
   <div class="keyword-outer">
     <input type="radio" name="keyword" id="rad-keyword-01" checked>
@@ -645,467 +647,467 @@
     </div><!--section title box-->
     <section class="keyword-section">
       <div class="keyword-btn-box">
-          <label for="rad-keyword-01" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>원목 수납장</label>
-          <label for="rad-keyword-02" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>슈퍼싱글 침대</label>
-          <label for="rad-keyword-03" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>책상</label>
-          <label for="rad-keyword-04" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>서랍 침대</label>
-          <label for="rad-keyword-05" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>행거</label>
+        <label for="rad-keyword-01" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>원목 수납장</label>
+        <label for="rad-keyword-02" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>슈퍼싱글 침대</label>
+        <label for="rad-keyword-03" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>책상</label>
+        <label for="rad-keyword-04" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>서랍 침대</label>
+        <label for="rad-keyword-05" class="keyword-btn"><i class="fa-solid fa-hashtag hashtag-icon"></i>행거</label>
       </div><!--keyword btn box-->
       <div class="keyword-frame">
         <ul>
           <li class="keyword-container">
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/sw10051.jpg" alt="원목 수납장1">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/sw10051.jpg" alt="원목 수납장1">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">사이즈: 5단 / 3단 와이드</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">포이 고무나무 원목 800 5단 서랍장</p>
-                  <p class="product-origin-price">441,700원</p>
-                  <p class="product-price"><span class="product-sale">40%</span>265,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">포이 고무나무 원목 800 5단 서랍장</p>
+                <p class="product-origin-price">441,700원</p>
+                <p class="product-price"><span class="product-sale">40%</span>265,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/sb10039.jpg" alt="원목 수납장2">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/sb10039.jpg" alt="원목 수납장2">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 월넛 / 내추럴</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <ul class="product-color">
-                    <li class="walnut"></li>  
-                    <li class="natural"></li>
-                  </ul><!--product color-->
-                  <p class="product-title">로덴 고무나무 원목 3단 와이드 서랍장 1200</p>
-                  <p class="product-origin-price">990,000원</p>
-                  <p class="product-price"><span class="product-sale">70%</span>295,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <ul class="product-color">
+                  <li class="walnut"></li>  
+                  <li class="natural"></li>
+                </ul><!--product color-->
+                <p class="product-title">로덴 고무나무 원목 3단 와이드 서랍장 1200</p>
+                <p class="product-origin-price">990,000원</p>
+                <p class="product-price"><span class="product-sale">70%</span>295,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/sd10015.jpg" alt="원목 수납장3">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/sd10015.jpg" alt="원목 수납장3">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 내추럴</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">동서가구 심플 원목 수납장 다용도 400 4단 서랍장</p>
-                  <p class="product-origin-price">169,000원</p>
-                  <p class="product-price"><span class="product-sale">46%</span>90,900원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">동서가구 심플 원목 수납장 다용도 400 4단 서랍장</p>
+                <p class="product-origin-price">169,000원</p>
+                <p class="product-price"><span class="product-sale">46%</span>90,900원</p>
+              </div><!--product txt-->
             </div><!--product-->
           </li>
           <li class="keyword-container">
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/bl10006.jpg" alt="슈퍼싱글 침대1">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/bl10006.jpg" alt="슈퍼싱글 침대1">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">사이즈: SS / Q</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">포더홈 피즈 무헤드 3단 통서랍 수납침대 SS/Q</p>
-                  <p class="product-origin-price">264,000원</p>
-                  <p class="product-price"><span class="product-sale">46%</span>169,900원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">포더홈 피즈 무헤드 3단 통서랍 수납침대 SS/Q</p>
+                <p class="product-origin-price">264,000원</p>
+                <p class="product-price"><span class="product-sale">46%</span>169,900원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/bl10048.jpg" alt="슈퍼싱글 침대2">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/bl10048.jpg" alt="슈퍼싱글 침대2">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 내추럴 / 아이보리 / 월넛</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <ul class="product-color">
-                    <li class="natural"></li>  
-                    <li class="ivory"></li>
-                    <li class="walnut"></li>
-                  </ul><!--product color-->
-                  <p class="product-title">레이디가구 스칸드 로맨틱2 클래식 원목침대 슈퍼싱글 SS 프레임</p>
-                  <p class="product-origin-price">465,000원</p>
-                  <p class="product-price"><span class="product-sale">49%</span>269,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <ul class="product-color">
+                  <li class="natural"></li>  
+                  <li class="ivory"></li>
+                  <li class="walnut"></li>
+                </ul><!--product color-->
+                <p class="product-title">레이디가구 스칸드 로맨틱2 클래식 원목침대 슈퍼싱글 SS 프레임</p>
+                <p class="product-origin-price">465,000원</p>
+                <p class="product-price"><span class="product-sale">49%</span>269,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/bw10072.jpg" alt="슈퍼싱글 침대3">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/bw10072.jpg" alt="슈퍼싱글 침대3">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">사이즈: SS</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">벨라 조명 슈퍼싱글 침대 (화이트무광)</p>
-                  <p class="product-origin-price">345,000원</p>
-                  <p class="product-price"><span class="product-sale">61%</span>886,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">벨라 조명 슈퍼싱글 침대 (화이트무광)</p>
+                <p class="product-origin-price">345,000원</p>
+                <p class="product-price"><span class="product-sale">61%</span>886,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
           </li>
           <li class="keyword-container">
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/od10011.jpg" alt="책상1">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/od10011.jpg" alt="책상1">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 블랙 / 화이트</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <ul class="product-color">
-                    <li class="black"></li>  
-                    <li class="white"></li>
-                  </ul>
-                  <p class="product-title">동서가구 코엘 인테리어 1500책상/서재책상</p>
-                  <p class="product-origin-price">298,000원</p>
-                  <p class="product-price"><span class="product-sale">32%</span>201,900원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <ul class="product-color">
+                  <li class="black"></li>  
+                  <li class="white"></li>
+                </ul>
+                <p class="product-title">동서가구 코엘 인테리어 1500책상/서재책상</p>
+                <p class="product-origin-price">298,000원</p>
+                <p class="product-price"><span class="product-sale">32%</span>201,900원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/ob10023.jpg" alt="책상2">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/ob10023.jpg" alt="책상2">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 그레이 / 화이트 / 핑크 / 네이비</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <ul class="product-color">
-                    <li class="gray"></li>  
-                    <li class="white"></li>
-                    <li class="pink"></li>
-                    <li class="navy"></li>
-                  </ul><!--product color-->
-                  <p class="product-title">레나 H형 책장 책상 세트 1인용 스터디 공부</p>
-                  <p class="product-origin-price">2,120,000원</p>
-                  <p class="product-price"><span class="product-sale">50%</span>1,060,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <ul class="product-color">
+                  <li class="gray"></li>  
+                  <li class="white"></li>
+                  <li class="pink"></li>
+                  <li class="navy"></li>
+                </ul><!--product color-->
+                <p class="product-title">레나 H형 책장 책상 세트 1인용 스터디 공부</p>
+                <p class="product-origin-price">2,120,000원</p>
+                <p class="product-price"><span class="product-sale">50%</span>1,060,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/os10035.jpg" alt="책상3">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/os10035.jpg" alt="책상3">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">사이즈: 1200 / 1400</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">포커스데스크 사무용 책상 1200/1400</p>
-                  <p class="product-origin-price">131,000원</p>
-                  <p class="product-price"><span class="product-sale">34%</span>85,900원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">포커스데스크 사무용 책상 1200/1400</p>
+                <p class="product-origin-price">131,000원</p>
+                <p class="product-price"><span class="product-sale">34%</span>85,900원</p>
+              </div><!--product txt-->
             </div><!--product-->
           </li>
           <li class="keyword-container">
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/bg10012.jpg" alt="서랍 침대1">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/bg10012.jpg" alt="서랍 침대1">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 화이트 / 그레이 / 내추럴</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <ul class="product-color">
-                    <li class="white"></li>  
-                    <li class="gray"></li>
-                    <li class="natural"></li>
-                  </ul><!--product color-->
-                  <p class="product-title">가구라이즈 무헤드 서랍 침대 발판 세트 Q</p>
-                  <p class="product-origin-price">570,000원</p>
-                  <p class="product-price"><span class="product-sale">23%</span>440,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <ul class="product-color">
+                  <li class="white"></li>  
+                  <li class="gray"></li>
+                  <li class="natural"></li>
+                </ul><!--product color-->
+                <p class="product-title">가구라이즈 무헤드 서랍 침대 발판 세트 Q</p>
+                <p class="product-origin-price">570,000원</p>
+                <p class="product-price"><span class="product-sale">23%</span>440,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/bh10084.webp" alt="서랍 침대2">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/bh10084.webp" alt="서랍 침대2">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 화이트+화이트 / 메이플+메이플 / 그레이+화이트</p>
                   <p class="product-option-txt">매트리스: 노뜨 컴포트 / 노뜨 라텍스탑 / 노뜨 메모리폼탑</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">아임빅 수납침대SS 일반헤드형+노뜨 매트릭스</p>
-                  <p class="product-origin-price">712,000원</p>
-                  <p class="product-price"><span class="product-sale">25%</span>537,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">아임빅 수납침대SS 일반헤드형+노뜨 매트릭스</p>
+                <p class="product-origin-price">712,000원</p>
+                <p class="product-price"><span class="product-sale">25%</span>537,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/bd10030.jpg" alt="서랍 침대3">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/bd10030.jpg" alt="서랍 침대3">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">구성: 무헤드 / LED / 슬림헤드</p>
                   <p class="product-option-txt">색상: 화이트 / 오크 / 베이지</p>
                   <p class="product-option-txt">사이즈: 슈퍼싱글 / 퀸</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <ul class="product-color">
-                    <li class="white"></li>  
-                    <li class="oak"></li>
-                    <li class="beige"></li>
-                  </ul>
-                  <p class="product-title">인홈 소담 EO등급 친환경 LED 수납 평상형 침대 슈퍼싱글 퀸</p>
-                  <p class="product-origin-price">890,000원</p>
-                  <p class="product-price"><span class="product-sale">81%</span>172,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <ul class="product-color">
+                  <li class="white"></li>  
+                  <li class="oak"></li>
+                  <li class="beige"></li>
+                </ul>
+                <p class="product-title">인홈 소담 EO등급 친환경 LED 수납 평상형 침대 슈퍼싱글 퀸</p>
+                <p class="product-origin-price">890,000원</p>
+                <p class="product-price"><span class="product-sale">81%</span>172,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
           </li>
           <li class="keyword-container">
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/ds30032.jpg" alt="행거1">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/ds30032.jpg" alt="행거1">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 월넛 / 아카시아 / 화이트</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">모던하임 2000 거울형 행거</p>
-                  <p class="product-origin-price">529,000원</p>
-                  <p class="product-price"><span class="product-sale">44%</span>294,000원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">모던하임 2000 거울형 행거</p>
+                <p class="product-origin-price">529,000원</p>
+                <p class="product-price"><span class="product-sale">44%</span>294,000원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/dd30002.jpg" alt="행거2">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/dd30002.jpg" alt="행거2">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 오크 / 화이트</p>
                   <p class="product-option-txt">종류: 고정형 / 바퀴형</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">동서가구 유니스 800폭 멀티 수납행거 옷장</p>
-                  <p class="product-origin-price">129,900원</p>
-                  <p class="product-price"><span class="product-sale">32%</span>129,900원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">동서가구 유니스 800폭 멀티 수납행거 옷장</p>
+                <p class="product-origin-price">129,900원</p>
+                <p class="product-price"><span class="product-sale">32%</span>129,900원</p>
+              </div><!--product txt-->
             </div><!--product-->
             <div class="product">
-                <div class="product-img">
-                  <img src="./images/product/ds30026.jpg" alt="행거3">
-                  <ul class="product-icon">
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">관심</p>
-                    </li>
-                    <li>
-                      <div class="product-icon-img"></div>
-                      <p class="product-icon-title">옵션</p>
-                    </li>
-                    <li>
+              <div class="product-img">
+                <img src="./images/product/ds30026.jpg" alt="행거3">
+                <ul class="product-icon">
+                  <li>
                     <div class="product-icon-img"></div>
-                      <p class="product-icon-title">장바구니</p>
-                    </li>
-                  </ul><!--product icon-->
-                  <div class="product-option">
+                    <p class="product-icon-title">관심</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">옵션</p>
+                  </li>
+                  <li>
+                    <div class="product-icon-img"></div>
+                    <p class="product-icon-title">장바구니</p>
+                  </li>
+                </ul><!--product icon-->
+                <div class="product-option">
                   <p class="product-option-txt">색상: 마블 / 아카시아</p>
-                  </div><!--product option-->
-                </div><!--product img-->
-                <div class="product-txt">
-                  <p class="product-title">케렌시아 선반형 튼튼한 행거 1100</p>
-                  <p class="product-origin-price">110,000원</p>
-                  <p class="product-price"><span class="product-sale">35%</span>71,900원</p>
-                </div><!--product txt-->
+                </div><!--product option-->
+              </div><!--product img-->
+              <div class="product-txt">
+                <p class="product-title">케렌시아 선반형 튼튼한 행거 1100</p>
+                <p class="product-origin-price">110,000원</p>
+                <p class="product-price"><span class="product-sale">35%</span>71,900원</p>
+              </div><!--product txt-->
             </div><!--product-->
           </li>
         </ul>
       </div><!--keyword frame-->
     </section>
   </div>
-
+  
   <!-- banner zone -->
   <div class="banner-zone">
     <div class="banner">
@@ -1115,7 +1117,7 @@
       <img src="./images/banner2.jpg" alt="배너2">
     </div>
   </div>
-
+  
   <!-- best -->
   <input type="radio" name="best" id="rad-best-bedroom" checked>
   <input type="radio" name="best" id="rad-best-living">
@@ -1136,1424 +1138,1424 @@
       <label for="rad-best-library" class="best-btn">학생/서재</label>
       <label for="rad-best-storage" class="best-btn">수납 가구</label>
     </div><!--best btn box-->
-
+    
     <!--bedroom-->
     <div class="best-container best-bedroom">
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bd20114.jpg" alt="침실 상품1">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bd20114.jpg" alt="침실 상품1">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">구성: 양모 일체형 SS / 양모 일체형 Q / 양모 분리형 SS / 양모 분리형 Q</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="gray"></li>
-            </ul><!--product color-->
-            <p class="product-title">동서가구 스너그 프리미엄 양모 일체형/분리형 매트리스 SS/Q</p>
-            <p class="product-origin-price">326,000원</p>
-            <p class="product-price"><span class="product-sale">24%</span>248,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="gray"></li>
+          </ul><!--product color-->
+          <p class="product-title">동서가구 스너그 프리미엄 양모 일체형/분리형 매트리스 SS/Q</p>
+          <p class="product-origin-price">326,000원</p>
+          <p class="product-price"><span class="product-sale">24%</span>248,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bl10048.jpg" alt="침실 상품2">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bl10048.jpg" alt="침실 상품2">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 내추럴 / 아이보리 / 월넛</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="natural"></li>
-              <li class="ivory"></li>
-              <li class="walnut"></li>
-            </ul><!--product color-->
-            <p class="product-title">레이디가구 스칸드 로맨틱2 클래식 원목침대 슈퍼싱글 SS 프레임</p>
-            <p class="product-origin-price">465,000원</p>
-            <p class="product-price"><span class="product-sale">49%</span>269,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="natural"></li>
+            <li class="ivory"></li>
+            <li class="walnut"></li>
+          </ul><!--product color-->
+          <p class="product-title">레이디가구 스칸드 로맨틱2 클래식 원목침대 슈퍼싱글 SS 프레임</p>
+          <p class="product-origin-price">465,000원</p>
+          <p class="product-price"><span class="product-sale">49%</span>269,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bh10102.webp" alt="침실 상품3">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bh10102.webp" alt="침실 상품3">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: Q / K</p>
             <p class="product-option-txt">색상: 메이플 / 코튼그레이</p>
             <p class="product-option-txt">하부: 일반 / 서랍형</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">클로즈 침대 Q/K (매트별도)</p>
-            <p class="product-origin-price">659,000원</p>
-            <p class="product-price"><span class="product-sale">24%</span>504,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">클로즈 침대 Q/K (매트별도)</p>
+          <p class="product-origin-price">659,000원</p>
+          <p class="product-price"><span class="product-sale">24%</span>504,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bg30108.jpg" alt="침실 상품4">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bg30108.jpg" alt="침실 상품4">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 화이트 / 아카시아 / 진그레이</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">3칸 미니 협탁 450</p>
-            <p class="product-origin-price">109,000원</p>
-            <p class="product-price"><span class="product-sale">43%</span>65,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">3칸 미니 협탁 450</p>
+          <p class="product-origin-price">109,000원</p>
+          <p class="product-price"><span class="product-sale">43%</span>65,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bw10066.jpg" alt="침실 상품5">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bw10066.jpg" alt="침실 상품5">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 퀸</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">리오 LED조명 퀸침대(고무나무 원목,통깔판)</p>
-            <p class="product-origin-price">1,035,000원</p>
-            <p class="product-price"><span class="product-sale">49%</span>530,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">리오 LED조명 퀸침대(고무나무 원목,통깔판)</p>
+          <p class="product-origin-price">1,035,000원</p>
+          <p class="product-price"><span class="product-sale">49%</span>530,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bl40120.jpg" alt="침실 상품6">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bl40120.jpg" alt="침실 상품6">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 내추럴 오크 / 그레이</p>
             <p class="product-option-txt">스툴: 선택 안함 / 내추럴 오크 / 그레이</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="oak"></li>
-              <li class="gray"></li>
-            </ul><!--product color-->
-            <p class="product-title">도담 피에트 화장대</p>
-            <p class="product-origin-price">1,089,000원</p>
-            <p class="product-price"><span class="product-sale">51%</span>58,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="oak"></li>
+            <li class="gray"></li>
+          </ul><!--product color-->
+          <p class="product-title">도담 피에트 화장대</p>
+          <p class="product-origin-price">1,089,000원</p>
+          <p class="product-price"><span class="product-sale">51%</span>58,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bd10036.jpg" alt="침실 상품7">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bd10036.jpg" alt="침실 상품7">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 슈퍼싱글 SS / 퀸 Q</p>
             <p class="product-option-txt">매트리스: 침대 프레임(매트리스 미포함) / 베이직 본넬매트 / 잇템 독립매트</p>
             <p class="product-option-txt">색상: 화이트 / 메이플 / 그레이</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="white"></li>
-              <li class="maple"></li>
-              <li class="gray"></li>
-            </ul><!--product color-->
-            <p class="product-title">프린홈 브릴 LED 리노 평상 침대 SS/Q(매트 선택)</p>
-            <p class="product-origin-price">339,000원</p>
-            <p class="product-price"><span class="product-sale">41%</span>199,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="white"></li>
+            <li class="maple"></li>
+            <li class="gray"></li>
+          </ul><!--product color-->
+          <p class="product-title">프린홈 브릴 LED 리노 평상 침대 SS/Q(매트 선택)</p>
+          <p class="product-origin-price">339,000원</p>
+          <p class="product-price"><span class="product-sale">41%</span>199,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/bh20132.webp" alt="침실 상품8">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/bh20132.webp" alt="침실 상품8">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: Q / K / KK</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">포시즌 6 마레 매트리스 Q/K/KK</p>
-            <p class="product-price">2,580,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">포시즌 6 마레 매트리스 Q/K/KK</p>
+          <p class="product-price">2,580,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
     </div><!--best bedroom-->
-
+    
     <!--living room-->
     <div class="best-container best-living">
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/lw10037.jpg" alt="거실 상품1">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/lw10037.jpg" alt="거실 상품1">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 3인</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">엘리트 3인 조야원단 소파</p>
-            <p class="product-origin-price">883,400원</p>
-            <p class="product-price"><span class="product-sale">40%</span>530,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">엘리트 3인 조야원단 소파</p>
+          <p class="product-origin-price">883,400원</p>
+          <p class="product-price"><span class="product-sale">40%</span>530,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/lb30013.jpg" alt="거실 상품2">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/lb30013.jpg" alt="거실 상품2">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 블랙 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="black"></li>
-              <li class="white"></li>
-            </ul><!--product color-->
-            <p class="product-title">제든 철제 스틸 미니 사이트 테이블 탁자</p>
-            <p class="product-origin-price">500,000원</p>
-            <p class="product-price"><span class="product-sale">60%</span>202,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="black"></li>
+            <li class="white"></li>
+          </ul><!--product color-->
+          <p class="product-title">제든 철제 스틸 미니 사이트 테이블 탁자</p>
+          <p class="product-origin-price">500,000원</p>
+          <p class="product-price"><span class="product-sale">60%</span>202,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/lh20049.webp" alt="거실 상품3">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/lh20049.webp" alt="거실 상품3">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 메이플 / 베이지 / 오크</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">클린트2 거실장 180cm 북유럽형(3종 1택)</p>
-            <p class="product-origin-price">128,000원</p>
-            <p class="product-price"><span class="product-sale">17%</span>198,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">클린트2 거실장 180cm 북유럽형(3종 1택)</p>
+          <p class="product-origin-price">128,000원</p>
+          <p class="product-price"><span class="product-sale">17%</span>198,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ls10025.jpg" alt="거실 상품4">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ls10025.jpg" alt="거실 상품4">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 그레이 / 베이지</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="gray"></li>
-              <li class="beige"></li>
-            </ul><!--product color-->
-            <p class="product-title">데이앤나잇 1인용 좌식소파</p>
-            <p class="product-origin-price">550,000원</p>
-            <p class="product-price"><span class="product-sale">47%</span>289,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="gray"></li>
+            <li class="beige"></li>
+          </ul><!--product color-->
+          <p class="product-title">데이앤나잇 1인용 좌식소파</p>
+          <p class="product-origin-price">550,000원</p>
+          <p class="product-price"><span class="product-sale">47%</span>289,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ls30019.jpg" alt="거실 상품5">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ls30019.jpg" alt="거실 상품5">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 오크 / 그레이</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">노리 로렌스 북유럽 리프트테이블 소파테이블</p>
-            <p class="product-origin-price">179,000원</p>
-            <p class="product-price"><span class="product-sale">31%</span>123,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">노리 로렌스 북유럽 리프트테이블 소파테이블</p>
+          <p class="product-origin-price">179,000원</p>
+          <p class="product-price"><span class="product-sale">31%</span>123,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ld20001.jpg" alt="거실 상품6">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ld20001.jpg" alt="거실 상품6">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 그레이 / 메이플 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="gray"></li>
-              <li class="maple"></li>
-              <li class="white"></li>
-            </ul><!--product color-->
-            <p class="product-title">동서가구 에밀레 1500 거실장</p>
-            <p class="product-origin-price">140,000원</p>
-            <p class="product-price"><span class="product-sale">36%</span>89,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="gray"></li>
+            <li class="maple"></li>
+            <li class="white"></li>
+          </ul><!--product color-->
+          <p class="product-title">동서가구 에밀레 1500 거실장</p>
+          <p class="product-origin-price">140,000원</p>
+          <p class="product-price"><span class="product-sale">36%</span>89,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/lw10031.jpg" alt="거실 상품7">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/lw10031.jpg" alt="거실 상품7">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 4인</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">덴버 4인 최고급 조야원단 소파</p>
-            <p class="product-origin-price">1,234,000원</p>
-            <p class="product-price"><span class="product-sale">39%</span>750,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">덴버 4인 최고급 조야원단 소파</p>
+          <p class="product-origin-price">1,234,000원</p>
+          <p class="product-price"><span class="product-sale">39%</span>750,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/lp10043.jpg" alt="거실 상품8">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/lp10043.jpg" alt="거실 상품8">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 1인용 / 2인용</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">피카소 빈 의자</p>
-            <p class="product-price">170,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">피카소 빈 의자</p>
+          <p class="product-price">170,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
     </div><!--best living-->
-
+    
     <!--kitchen-->
     <div class="best-container best-kitchen">
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kd10010.jpg" alt="주방 상품1">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kd10010.jpg" alt="주방 상품1">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">의자: 화이트 / 그레이 / 코랄 / 스카이블루</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">바오트 레테 4인 세라믹 식탁 PP의자 SET</p>
-            <p class="product-origin-price">400,000원</p>
-            <p class="product-price"><span class="product-sale">43%</span>229,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">바오트 레테 4인 세라믹 식탁 PP의자 SET</p>
+          <p class="product-origin-price">400,000원</p>
+          <p class="product-price"><span class="product-sale">43%</span>229,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kl20022.jpg" alt="주방 상품2">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kl20022.jpg" alt="주방 상품2">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 그린 / 그레이</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="green"></li>
-              <li class="gray"></li>
-            </ul><!--product color-->
-            <p class="product-title">슬로우알레 론드 스틸 의자(2개입)</p>
-            <p class="product-origin-price">302,000원</p>
-            <p class="product-price"><span class="product-sale">25%</span>225,600원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="green"></li>
+            <li class="gray"></li>
+          </ul><!--product color-->
+          <p class="product-title">슬로우알레 론드 스틸 의자(2개입)</p>
+          <p class="product-origin-price">302,000원</p>
+          <p class="product-price"><span class="product-sale">25%</span>225,600원</p>
+        </div><!--product txt-->
       </div><!--product--> 
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kj10040.jpg" alt="주방 상품3">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kj10040.jpg" alt="주방 상품3">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">선택: 블레비오 식탁</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">장인 블레비오 식탁</p>
-            <p class="product-price">1,965,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">장인 블레비오 식탁</p>
+          <p class="product-price">1,965,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kh10046.webp" alt="주방 상품4">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kh10046.webp" alt="주방 상품4">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">세라믹 상판: 코튼화이트 / 화이트마블</p>
             <p class="product-option-txt">의자: 그레이 / 오트밀 / 타우페</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">도노 엣지 세라믹 식탁세트 4인용(위드의자 4포함)</p>
-            <p class="product-origin-price">1,109,000원</p>
-            <p class="product-price"><span class="product-sale">21%</span>879,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">도노 엣지 세라믹 식탁세트 4인용(위드의자 4포함)</p>
+          <p class="product-origin-price">1,109,000원</p>
+          <p class="product-price"><span class="product-sale">21%</span>879,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kd10016.jpg" alt="주방 상품5">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kd10016.jpg" alt="주방 상품5">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 4인</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">소티디자인 라비에 포세린 세라믹 그레이무광 4인 식탁세트</p>
-            <p class="product-origin-price">1,200,000원</p>
-            <p class="product-price"><span class="product-sale">48%</span>623,300원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">소티디자인 라비에 포세린 세라믹 그레이무광 4인 식탁세트</p>
+          <p class="product-origin-price">1,200,000원</p>
+          <p class="product-price"><span class="product-sale">48%</span>623,300원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kh20052.webp" alt="주방 상품6">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kh20052.webp" alt="주방 상품6">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 도브베이지 / 스톤베이지</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">유로503 디아고 이노레더 식탁의자</p>
-            <p class="product-price">104,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">유로503 디아고 이노레더 식탁의자</p>
+          <p class="product-price">104,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/kw30034.jpg" alt="주방 상품7">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/kw30034.jpg" alt="주방 상품7">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 오크 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="oak"></li>
-              <li class="white"></li>
-            </ul><!--product color-->
-            <p class="product-title">네이슨 오픈 수납장</p>
-            <p class="product-origin-price">204,400원</p>
-            <p class="product-price"><span class="product-sale">29%</span>146,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="oak"></li>
+            <li class="white"></li>
+          </ul><!--product color-->
+          <p class="product-title">네이슨 오픈 수납장</p>
+          <p class="product-origin-price">204,400원</p>
+          <p class="product-price"><span class="product-sale">29%</span>146,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ks10028.jpg" alt="주방 상품8">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ks10028.jpg" alt="주방 상품8">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">식탁: 1200 / 1500 / 1800</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">더메종 화이트 2인 4인 6인 식탁세트 (+데이체어)</p>
-            <p class="product-origin-price">288,000원</p>
-            <p class="product-price"><span class="product-sale">46%</span>155,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">더메종 화이트 2인 4인 6인 식탁세트 (+데이체어)</p>
+          <p class="product-origin-price">288,000원</p>
+          <p class="product-price"><span class="product-sale">46%</span>155,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
     </div><!--best kitchen-->
-
+    
     <!--dress room-->
     <div class="best-container best-dress">
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/dw20056.jpg" alt="드레스룸 상품1">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/dw20056.jpg" alt="드레스룸 상품1">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">구성: 원서랍장 / 거울장 / 원서랍장+거울장</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">우아미 클레식 800 장롱(원서랍장+거울장)</p>
-            <p class="product-origin-price">380,000원</p>
-            <p class="product-price"><span class="product-sale">40%</span>230,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">우아미 클레식 800 장롱(원서랍장+거울장)</p>
+          <p class="product-origin-price">380,000원</p>
+          <p class="product-price"><span class="product-sale">40%</span>230,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/dl10008.jpg" alt="드레스룸 상품2">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/dl10008.jpg" alt="드레스룸 상품2">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">종류: 행거형 / 선반형</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">이안 빅 슬라이딩 커스터마이징 옷장 1200</p>
-            <p class="product-origin-price">399,000원</p>
-            <p class="product-price"><span class="product-sale">53%</span>219,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">이안 빅 슬라이딩 커스터마이징 옷장 1200</p>
+          <p class="product-origin-price">399,000원</p>
+          <p class="product-price"><span class="product-sale">53%</span>219,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/db20020.jpg" alt="드레스룸 상품3">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/db20020.jpg" alt="드레스룸 상품3">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 화이트 / 불루</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="white"></li>
-              <li class="blue"></li>
-            </ul><!--product color-->
-            <p class="product-title">레체 원서랍 장롱 틈새 옷장 세트 학생</p>
-            <p class="product-origin-price">2,332,000원</p>
-            <p class="product-price"><span class="product-sale">50%</span>1,166,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="white"></li>
+            <li class="blue"></li>
+          </ul><!--product color-->
+          <p class="product-title">레체 원서랍 장롱 틈새 옷장 세트 학생</p>
+          <p class="product-origin-price">2,332,000원</p>
+          <p class="product-price"><span class="product-sale">50%</span>1,166,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/dw10038.jpg" alt="드레스룸 상품4">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/dw10038.jpg" alt="드레스룸 상품4">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 4자 / 5자</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">리그 4자/5자 슬라이딩 싱글장</p>
-            <p class="product-origin-price">964,000원</p>
-            <p class="product-price"><span class="product-sale">45%</span>530,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">리그 4자/5자 슬라이딩 싱글장</p>
+          <p class="product-origin-price">964,000원</p>
+          <p class="product-price"><span class="product-sale">45%</span>530,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/dh10050.webp" alt="드레스룸 상품5">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/dh10050.webp" alt="드레스룸 상품5">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 메이플+화이트 / 메이플+올리브그린 / 화이트+화이트 / 화이트+올리브그린</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">아임빅 슬라이딩 옷장 100cm 선반형 4종</p>
-            <p class="product-origin-price">590,000원</p>
-            <p class="product-price"><span class="product-sale">15%</span>590,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">아임빅 슬라이딩 옷장 100cm 선반형 4종</p>
+          <p class="product-origin-price">590,000원</p>
+          <p class="product-price"><span class="product-sale">15%</span>590,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/dh20044.webp" alt="드레스룸 상품6">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/dh20044.webp" alt="드레스룸 상품6">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 90 / 100</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">바이엘 채널 옷장 화이트</p>
-            <p class="product-origin-price">321,000원</p>
-            <p class="product-price"><span class="product-sale">15%</span>272,850원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">바이엘 채널 옷장 화이트</p>
+          <p class="product-origin-price">321,000원</p>
+          <p class="product-price"><span class="product-sale">15%</span>272,850원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ds30026.jpg" alt="드레스룸 상품7">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ds30026.jpg" alt="드레스룸 상품7">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 마블 / 아카시아</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">케렌시아 선반형 튼튼한 행거 1100</p>
-            <p class="product-origin-price">110,000원</p>
-            <p class="product-price"><span class="product-sale">35%</span>71,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">케렌시아 선반형 튼튼한 행거 1100</p>
+          <p class="product-origin-price">110,000원</p>
+          <p class="product-price"><span class="product-sale">35%</span>71,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/dl20014.jpg" alt="드레스룸 상품8">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/dl20014.jpg" alt="드레스룸 상품8">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">구성: 400옷장 / 400거울옷장 / 800옷장 / 800거울옷장</p>
             <p class="product-option-txt">색상: 화이트 / 화이트 그레이 / 메이플</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="white"></li>  
-              <li class="gray"></li>
-              <li class="maple"></li>
-            </ul>
-            <p class="product-title">포더홈 코튼 프리미엄 옷장 400 거울 옷장</p>
-            <p class="product-origin-price">129,900원</p>
-            <p class="product-price"><span class="product-sale">31%</span>99,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="white"></li>  
+            <li class="gray"></li>
+            <li class="maple"></li>
+          </ul>
+          <p class="product-title">포더홈 코튼 프리미엄 옷장 400 거울 옷장</p>
+          <p class="product-origin-price">129,900원</p>
+          <p class="product-price"><span class="product-sale">31%</span>99,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
     </div><!--best dress-->
-
+    
     <!--library-->
     <div class="best-container best-library">
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/od10011.jpg" alt="학생/서재 상품1">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/od10011.jpg" alt="학생/서재 상품1">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 블랙 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="black"></li>
-              <li class="white"></li>
-            </ul><!--product color-->
-            <p class="product-title">동서가구 코엘 인테리어 1500책상/서재책상</p>
-            <p class="product-origin-price">298,000원</p>
-            <p class="product-price"><span class="product-sale">32%</span>201,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="black"></li>
+            <li class="white"></li>
+          </ul><!--product color-->
+          <p class="product-title">동서가구 코엘 인테리어 1500책상/서재책상</p>
+          <p class="product-origin-price">298,000원</p>
+          <p class="product-price"><span class="product-sale">32%</span>201,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/os10035.jpg" alt="학생/서재 상품2">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/os10035.jpg" alt="학생/서재 상품2">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 1200 / 1400</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">포커스데스크 사무용 책상 1200/1400</p>
-            <p class="product-origin-price">131,000원</p>
-            <p class="product-price"><span class="product-sale">34%</span>85,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">포커스데스크 사무용 책상 1200/1400</p>
+          <p class="product-origin-price">131,000원</p>
+          <p class="product-price"><span class="product-sale">34%</span>85,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/os30041.jpg" alt="학생/서재 상품3">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/os30041.jpg" alt="학생/서재 상품3">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 블랙 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="black"></li>
-              <li class="white"></li>
-            </ul><!--product color-->
-            <p class="product-title">포커스체어 사무용 의자</p>
-            <p class="product-origin-price">110,000원</p>
-            <p class="product-price"><span class="product-sale">39%</span>66,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="black"></li>
+            <li class="white"></li>
+          </ul><!--product color-->
+          <p class="product-title">포커스체어 사무용 의자</p>
+          <p class="product-origin-price">110,000원</p>
+          <p class="product-price"><span class="product-sale">39%</span>66,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/oh20053.webp" alt="학생/서재 상품4">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/oh20053.webp" alt="학생/서재 상품4">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 오크 / 월넛 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="oak"></li>
-              <li class="walnut"></li>
-              <li class="white"></li>
-            </ul><!--product color-->
-            <p class="product-title">유로 501 플랫 서재 5단 장식책장 1000</p>
-            <p class="product-price">353,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="oak"></li>
+            <li class="walnut"></li>
+            <li class="white"></li>
+          </ul><!--product color-->
+          <p class="product-title">유로 501 플랫 서재 5단 장식책장 1000</p>
+          <p class="product-price">353,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ol30017.jpg" alt="학생/서재 상품5">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ol30017.jpg" alt="학생/서재 상품5">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 그레이</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">레이디가구 피트 책상 학생 의자</p>
-            <p class="product-origin-price">160,000원</p>
-            <p class="product-price"><span class="product-sale">35%</span>105,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">레이디가구 피트 책상 학생 의자</p>
+          <p class="product-origin-price">160,000원</p>
+          <p class="product-price"><span class="product-sale">35%</span>105,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/os20029.jpg" alt="학생/서재 상품6">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/os20029.jpg" alt="학생/서재 상품6">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 2단 / 3단</p>
             <p class="product-option-txt">색상: 베이직화이트 / 베이직피치</p>
-            </div><!--product option-->
+          </div><!--product option-->
         </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="white"></li>
-              <li class="natural"></li>
-            </ul><!--product color-->
-            <p class="product-title">모두 낮은책장 2단/3단 2colors</p>
-            <p class="product-origin-price">50,000원</p>
-            <p class="product-price"><span class="product-sale">50%</span>24,900원</p>
-          </div><!--product txt-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="white"></li>
+            <li class="natural"></li>
+          </ul><!--product color-->
+          <p class="product-title">모두 낮은책장 2단/3단 2colors</p>
+          <p class="product-origin-price">50,000원</p>
+          <p class="product-price"><span class="product-sale">50%</span>24,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/oh20047.webp" alt="학생/서재 상품7">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/oh20047.webp" alt="학생/서재 상품7">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 메이플 / 화이트 / 내추럴오크 / 그레이</p>
-            </div><!--product option-->
+          </div><!--product option-->
         </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="maple"></li>
-              <li class="white"></li>
-              <li class="oak"></li>
-              <li class="gray"></li>
-            </ul><!--product color-->
-            <p class="product-title">샘 책장 5단 120cm 수납형 시공(컬러 1택)</p>
-            <p class="product-origin-price">257,000원</p>
-            <p class="product-price"><span class="product-sale">12%</span>226,000원</p>
-          </div><!--product txt-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="maple"></li>
+            <li class="white"></li>
+            <li class="oak"></li>
+            <li class="gray"></li>
+          </ul><!--product color-->
+          <p class="product-title">샘 책장 5단 120cm 수납형 시공(컬러 1택)</p>
+          <p class="product-origin-price">257,000원</p>
+          <p class="product-price"><span class="product-sale">12%</span>226,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ob10023.jpg" alt="학생/서재 상품8">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ob10023.jpg" alt="학생/서재 상품8">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 그레이 / 화이트 / 핑크 / 네이비</p>
-            </div><!--product option-->
+          </div><!--product option-->
         </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="gray"></li>
-              <li class="white"></li>
-              <li class="pink"></li>
-              <li class="navy"></li>
-            </ul><!--product color-->
-            <p class="product-title">레나 H형 책장 책상 세트 1인용 스터디 공부</p>
-            <p class="product-origin-price">2,120,000원</p>
-            <p class="product-price"><span class="product-sale">50%</span>1,060,000원</p>
-          </div><!--product txt-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="gray"></li>
+            <li class="white"></li>
+            <li class="pink"></li>
+            <li class="navy"></li>
+          </ul><!--product color-->
+          <p class="product-title">레나 H형 책장 책상 세트 1인용 스터디 공부</p>
+          <p class="product-origin-price">2,120,000원</p>
+          <p class="product-price"><span class="product-sale">50%</span>1,060,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
     </div><!--best library-->
-
+    
     <!--storage-->
     <div class="best-container best-storage">
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sg30009.jpg" alt="수납 가구 상품1">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sg30009.jpg" alt="수납 가구 상품1">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 화이트 / 화이트콤보 / 버터 / 민트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">양문 수납장 세트 2000</p>
-            <p class="product-origin-price">348,000원</p>
-            <p class="product-price"><span class="product-sale">38%</span>217,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">양문 수납장 세트 2000</p>
+          <p class="product-origin-price">348,000원</p>
+          <p class="product-price"><span class="product-sale">38%</span>217,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sd30021.jpg" alt="수납 가구 상품2">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sd30021.jpg" alt="수납 가구 상품2">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 터쿼이즈</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">동서가구 써밋 터쿼이즈 틈새 400수납장(2도어)</p>
-            <p class="product-origin-price">282,000원</p>
-            <p class="product-price"><span class="product-sale">32%</span>190,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">동서가구 써밋 터쿼이즈 틈새 400수납장(2도어)</p>
+          <p class="product-origin-price">282,000원</p>
+          <p class="product-price"><span class="product-sale">32%</span>190,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sd20027.jpg" alt="수납 가구 상품3">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sd20027.jpg" alt="수납 가구 상품3">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 화이트 / 아카시아</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="white"></li>  
-              <li class="ivory"></li>
-            </ul>
-            <p class="product-title">케이컴퍼니 LPM 이음 푸시 400도어 선반장</p>
-            <p class="product-origin-price">103,000원</p>
-            <p class="product-price"><span class="product-sale">23%</span>79,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="white"></li>  
+            <li class="ivory"></li>
+          </ul>
+          <p class="product-title">케이컴퍼니 LPM 이음 푸시 400도어 선반장</p>
+          <p class="product-origin-price">103,000원</p>
+          <p class="product-price"><span class="product-sale">23%</span>79,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sb10039.jpg" alt="수납 가구 상품4">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sb10039.jpg" alt="수납 가구 상품4">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 월넛 / 내추럴</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="walnut"></li>  
-              <li class="natural"></li>
-            </ul>
-            <p class="product-title">로덴 고무나무 원목 3단 와이드 서랍장(1200)</p>
-            <p class="product-origin-price">990,000원</p>
-            <p class="product-price"><span class="product-sale">70%</span>295,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="walnut"></li>  
+            <li class="natural"></li>
+          </ul>
+          <p class="product-title">로덴 고무나무 원목 3단 와이드 서랍장(1200)</p>
+          <p class="product-origin-price">990,000원</p>
+          <p class="product-price"><span class="product-sale">70%</span>295,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/ss20045.jpg" alt="수납 가구 상품5">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/ss20045.jpg" alt="수납 가구 상품5">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">사이즈: 600x600 / 600x1200 / 600X1500</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="black"></li>  
-              <li class="ivory"></li>
-            </ul>
-            <p class="product-title">몬스터랙/랙플러스 W600 선반 2~7단</p>
-            <p class="product-origin-price">72,000원</p>
-            <p class="product-price"><span class="product-sale">40%</span>13,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="black"></li>  
+            <li class="ivory"></li>
+          </ul>
+          <p class="product-title">몬스터랙/랙플러스 W600 선반 2~7단</p>
+          <p class="product-origin-price">72,000원</p>
+          <p class="product-price"><span class="product-sale">40%</span>13,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sl30033.jpg" alt="수납 가구 상품6">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sl30033.jpg" alt="수납 가구 상품6">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">높이: 2단 / 3단</p>
             <p class="product-option-txt">사이즈: 800 / 1200</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">모닝 템바보드 높은 2단 거실 수납장 800</p>
-            <p class="product-origin-price">159,000원</p>
-            <p class="product-price"><span class="product-sale">36%</span>104,300원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">모닝 템바보드 높은 2단 거실 수납장 800</p>
+          <p class="product-origin-price">159,000원</p>
+          <p class="product-price"><span class="product-sale">36%</span>104,300원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sg20003.jpg" alt="수납 가구 상품7">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sg20003.jpg" alt="수납 가구 상품7">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 오크 / 화이트</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <ul class="product-color">
-              <li class="oak"></li>  
-              <li class="white"></li>
-            </ul>
-            <p class="product-title">가구라이즈 서랍형 벽선반 600</p>
-            <p class="product-origin-price">139,000원</p>
-            <p class="product-price"><span class="product-sale">39%</span>85,000원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <ul class="product-color">
+            <li class="oak"></li>  
+            <li class="white"></li>
+          </ul>
+          <p class="product-title">가구라이즈 서랍형 벽선반 600</p>
+          <p class="product-origin-price">139,000원</p>
+          <p class="product-price"><span class="product-sale">39%</span>85,000원</p>
+        </div><!--product txt-->
       </div><!--product-->
       <div class="product best">
-          <div class="product-img">
-            <img src="./images/product/sd10015.jpg" alt="수납 가구 상품8">
-            <ul class="product-icon">
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">관심</p>
-              </li>
-              <li>
-                <div class="product-icon-img"></div>
-                <p class="product-icon-title">옵션</p>
-              </li>
-              <li>
+        <div class="product-img">
+          <img src="./images/product/sd10015.jpg" alt="수납 가구 상품8">
+          <ul class="product-icon">
+            <li>
               <div class="product-icon-img"></div>
-                <p class="product-icon-title">장바구니</p>
-              </li>
-            </ul><!--product icon-->
-            <div class="product-option">
+              <p class="product-icon-title">관심</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">옵션</p>
+            </li>
+            <li>
+              <div class="product-icon-img"></div>
+              <p class="product-icon-title">장바구니</p>
+            </li>
+          </ul><!--product icon-->
+          <div class="product-option">
             <p class="product-option-txt">색상: 내추럴</p>
-            </div><!--product option-->
-          </div><!--product img-->
-          <div class="product-txt">
-            <p class="product-title">동서가구 심플 원목 수납장 다용도 400 4단서랍장</p>
-            <p class="product-origin-price">169,000원</p>
-            <p class="product-price"><span class="product-sale">46%</span>90,900원</p>
-          </div><!--product txt-->
+          </div><!--product option-->
+        </div><!--product img-->
+        <div class="product-txt">
+          <p class="product-title">동서가구 심플 원목 수납장 다용도 400 4단서랍장</p>
+          <p class="product-origin-price">169,000원</p>
+          <p class="product-price"><span class="product-sale">46%</span>90,900원</p>
+        </div><!--product txt-->
       </div><!--product-->
     </div><!--best storage-->
   </section>
-
+  
   <!-- md recommend -->
   <div class="section-title-box">
     <p class="section-title-txt">MD 추천</p>
@@ -2561,7 +2563,7 @@
   <section class="md-section">
     <div class="md-frame">
       <i class="fa-solid fa-angle-left md-left-arrow md-arrow"></i>
-      <ul>       
+      <ul>        
         <li class="product md">
           <div class="md-on">
           </div>
@@ -2594,201 +2596,201 @@
         <li class="product md">
           <div class="md-on">
           </div>
-            <div class="product-img">
-              <img src="./images/product/od30005.jpg" alt="md 추천4">
-              <ul class="product-icon">
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">관심</p>
-                </li>
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">옵션</p>
-                </li>
-                <li>
+          <div class="product-img">
+            <img src="./images/product/od30005.jpg" alt="md 추천4">
+            <ul class="product-icon">
+              <li>
                 <div class="product-icon-img"></div>
-                  <p class="product-icon-title">장바구니</p>
-                </li>
-              </ul><!--product icon-->
-              <div class="product-option">
+                <p class="product-icon-title">관심</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">옵션</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">장바구니</p>
+              </li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 블루 / 그린 / 블랙 / 레드 / 오렌지</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <ul class="product-color">
-                <li class="blue"></li>
-                <li class="green"></li>
-                <li class="black"></li>
-                <li class="red"></li>
-                <li class="orange"></li>
-              </ul>
-              <p class="product-title">동서가구 엘피 접이식 암체어(팔걸이형 사무용 의자)</p>
-              <p class="product-origin-price">149,000원</p>
-              <p class="product-price"><span class="product-sale">43%</span>83,900원</p>
-            </div><!--product txt-->
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <ul class="product-color">
+              <li class="blue"></li>
+              <li class="green"></li>
+              <li class="black"></li>
+              <li class="red"></li>
+              <li class="orange"></li>
+            </ul>
+            <p class="product-title">동서가구 엘피 접이식 암체어(팔걸이형 사무용 의자)</p>
+            <p class="product-origin-price">149,000원</p>
+            <p class="product-price"><span class="product-sale">43%</span>83,900원</p>
+          </div><!--product txt-->
         </li><!--product 4-->      
         <li class="product md">
           <div class="md-on">
           </div>
-            <div class="product-img">
-              <img src="./images/product/bd10162.jpg" alt="md 추천5">
-              <ul class="product-icon">
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">관심</p>
-                </li>
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">옵션</p>
-                </li>
-                <li>
+          <div class="product-img">
+            <img src="./images/product/bd10162.jpg" alt="md 추천5">
+            <ul class="product-icon">
+              <li>
                 <div class="product-icon-img"></div>
-                  <p class="product-icon-title">장바구니</p>
-                </li>
-              </ul><!--product icon-->
-              <div class="product-option">
-                <p class="product-option-txt">사이즈: SS / Q</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <p class="product-title">매트리 코코 베이직 패브릭 저상형 침대 데이베드 SS Q</p>
-              <p class="product-origin-price">369,000원</p>
-              <p class="product-price"><span class="product-sale">49%</span>189,000원</p>
-            </div><!--product txt-->
+                <p class="product-icon-title">관심</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">옵션</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">장바구니</p>
+              </li>
+            </ul><!--product icon-->
+            <div class="product-option">
+              <p class="product-option-txt">사이즈: SS / Q</p>
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <p class="product-title">매트리 코코 베이직 패브릭 저상형 침대 데이베드 SS Q</p>
+            <p class="product-origin-price">369,000원</p>
+            <p class="product-price"><span class="product-sale">49%</span>189,000원</p>
+          </div><!--product txt-->
         </li><!--product 5-->        
         <li class="product md md-focus">
           <div class="md-on">
           </div>
-            <div class="product-img">
-              <img src="./images/product/kg30004.jpg" alt="md 추천1">
-              <ul class="product-icon">
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">관심</p>
-                </li>
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">옵션</p>
-                </li>
-                <li>
+          <div class="product-img">
+            <img src="./images/product/kg30004.jpg" alt="md 추천1">
+            <ul class="product-icon">
+              <li>
                 <div class="product-icon-img"></div>
-                  <p class="product-icon-title">장바구니</p>
-                </li>
-              </ul><!--product icon-->
-              <div class="product-option">
+                <p class="product-icon-title">관심</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">옵션</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">장바구니</p>
+              </li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 화이트 / 그레이 / 딥그린</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <p class="product-title">가구라이즈 서랍형 광파 오븐 렌지대 600</p>
-              <p class="product-origin-price">119,000원</p>
-              <p class="product-price"><span class="product-sale">45%</span>65,900원</p>
-            </div><!--product txt-->
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <p class="product-title">가구라이즈 서랍형 광파 오븐 렌지대 600</p>
+            <p class="product-origin-price">119,000원</p>
+            <p class="product-price"><span class="product-sale">45%</span>65,900원</p>
+          </div><!--product txt-->
         </li><!--product 1-->
         <li class="product md">
           <div class="md-on">
           </div>
-            <div class="product-img">
-              <img src="./images/product/ll10007.jpg" alt="md 추천2">
-              <ul class="product-icon">
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">관심</p>
-                </li>
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">옵션</p>
-                </li>
-                <li>
+          <div class="product-img">
+            <img src="./images/product/ll10007.jpg" alt="md 추천2">
+            <ul class="product-icon">
+              <li>
                 <div class="product-icon-img"></div>
-                  <p class="product-icon-title">장바구니</p>
-                </li>
-              </ul><!--product icon-->
-              <div class="product-option">
+                <p class="product-icon-title">관심</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">옵션</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">장바구니</p>
+              </li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">사이즈: 3인 / 4인</p>
               <p class="product-option-txt">색상: 스노우베이지 / 탄브라운</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <ul class="product-color">
-                <li class="beige"></li>
-                <li class="tan-brown"></li>
-              </ul><!--product color-->
-              <p class="product-title">슬로우알레 천연 가죽 소파 3인/4인</p>
-              <p class="product-origin-price">1,376,000원</p>
-              <p class="product-price"><span class="product-sale">14%</span>1,279,000원</p>
-            </div><!--product txt-->
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <ul class="product-color">
+              <li class="beige"></li>
+              <li class="tan-brown"></li>
+            </ul><!--product color-->
+            <p class="product-title">슬로우알레 천연 가죽 소파 3인/4인</p>
+            <p class="product-origin-price">1,376,000원</p>
+            <p class="product-price"><span class="product-sale">14%</span>1,279,000원</p>
+          </div><!--product txt-->
         </li><!--product 2-->        
         <li class="product md">
           <div class="md-on">
           </div>
-            <div class="product-img">
-              <img src="./images/product/dl20014.jpg" alt="md 추천3">
-              <ul class="product-icon">
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">관심</p>
-                </li>
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">옵션</p>
-                </li>
-                <li>
+          <div class="product-img">
+            <img src="./images/product/dl20014.jpg" alt="md 추천3">
+            <ul class="product-icon">
+              <li>
                 <div class="product-icon-img"></div>
-                  <p class="product-icon-title">장바구니</p>
-                </li>
-              </ul><!--product icon-->
-              <div class="product-option">
+                <p class="product-icon-title">관심</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">옵션</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">장바구니</p>
+              </li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">종류: 행거형 / 선반형</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <p class="product-title">이안 빅 슬라이딩 커스터마이징 옷장 1200</p>
-              <p class="product-origin-price">399,000원</p>
-              <p class="product-price"><span class="product-sale">53%</span>219,900원</p>
-            </div><!--product txt-->
-        </li><!--product 3-->      
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <p class="product-title">이안 빅 슬라이딩 커스터마이징 옷장 1200</p>
+            <p class="product-origin-price">399,000원</p>
+            <p class="product-price"><span class="product-sale">53%</span>219,900원</p>
+          </div><!--product txt-->
+        </li><!--product 3-->
         <li class="product md">
           <div class="md-on">
           </div>
-            <div class="product-img">
-              <img src="./images/product/od30005.jpg" alt="md 추천4">
-              <ul class="product-icon">
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">관심</p>
-                </li>
-                <li>
-                  <div class="product-icon-img"></div>
-                  <p class="product-icon-title">옵션</p>
-                </li>
-                <li>
+          <div class="product-img">
+            <img src="./images/product/od30005.jpg" alt="md 추천4">
+            <ul class="product-icon">
+              <li>
                 <div class="product-icon-img"></div>
-                  <p class="product-icon-title">장바구니</p>
-                </li>
-              </ul><!--product icon-->
-              <div class="product-option">
+                <p class="product-icon-title">관심</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">옵션</p>
+              </li>
+              <li>
+                <div class="product-icon-img"></div>
+                <p class="product-icon-title">장바구니</p>
+              </li>
+            </ul><!--product icon-->
+            <div class="product-option">
               <p class="product-option-txt">색상: 블루 / 그린 / 블랙 / 레드 / 오렌지</p>
-              </div><!--product option-->
-            </div><!--product img-->
-            <div class="product-txt">
-              <ul class="product-color">
-                <li class="blue"></li>
-                <li class="green"></li>
-                <li class="black"></li>
-                <li class="red"></li>
-                <li class="orange"></li>
-              </ul>
-              <p class="product-title">동서가구 엘피 접이식 암체어(팔걸이형 사무용 의자)</p>
-              <p class="product-origin-price">149,000원</p>
-              <p class="product-price"><span class="product-sale">43%</span>83,900원</p>
-            </div><!--product txt-->
-        </li><!--product 4-->      
+            </div><!--product option-->
+          </div><!--product img-->
+          <div class="product-txt">
+            <ul class="product-color">
+              <li class="blue"></li>
+              <li class="green"></li>
+              <li class="black"></li>
+              <li class="red"></li>
+              <li class="orange"></li>
+            </ul>
+            <p class="product-title">동서가구 엘피 접이식 암체어(팔걸이형 사무용 의자)</p>
+            <p class="product-origin-price">149,000원</p>
+            <p class="product-price"><span class="product-sale">43%</span>83,900원</p>
+          </div><!--product txt-->
+        </li><!--product 4-->    
       </ul>
       <i class="fa-solid fa-angle-right md-right-arrow md-arrow"></i>
     </div>
   </section>
-
+  
   <!-- interior -->
   <div class="section-title-box">
     <p class="section-title-txt">이달의 인테리어</p>
@@ -2851,12 +2853,12 @@
       <img src="./images/interior2.jpg" alt="인테리어 이미지 2">
     </div><!--interior-->
   </section>
-
+  
   <!-- wide banner -->
   <div class="wide-banner">
     <div class="wide-banner-img"></div>
   </div>
-
+  
   <!-- photo review -->
   <div class="section-title-box">
     <p class="section-title-txt">포토 후기</p>
@@ -2943,7 +2945,7 @@
       </a>
     </div><!--photo review-->
   </section>
-
+  
   <!-- footer -->
   <div class="footer-nav-outer">
     <nav class="footer-nav">
@@ -2997,13 +2999,13 @@
       </div><!--customer info-->
     </footer>
   </div>
-
+    
   <!-- top/bottom button -->
   <div class="fix-btn-box">
     <a href="#header" class="top-btn fix-btn"><i class="fa-solid fa-chevron-up"></i></a>
     <a href="#footer" class="bottom-btn fix-btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-
+  
   <!-- cart -->
   <div class="modal-cart-bg">
     <div class="modal-cart">
