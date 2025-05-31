@@ -1,8 +1,28 @@
 $(function() {
+  viewMiniLogo();
+
   productEvent();
 
   fixBtnEvent();
 });
+
+function viewMiniLogo() {
+  const miniLogo = $(".gnb .mini-logo");
+
+  //스크롤 시 gnb에 로고를 보임
+  $(window).on("scroll", function() {
+    let currentTop = $(window).scrollTop();
+    let headerHeight = $(".header").innerHeight();
+
+    if (currentTop > headerHeight) {
+      miniLogo.css("width", "120px");
+    }
+    else {
+      miniLogo.css("width", "0px");
+    }
+  });
+}
+
 
 function productEvent() {
   const product = $(".product");
