@@ -2,12 +2,14 @@ $(function() {
   detailImgEvent();
 
   controlOption();
-  
+
+  detailBarEvent();
+
   productEvent();
 
   //리뷰 정렬 드롭다운 선택 시 텍스트 변경
   dropdownChangeTxtEvent($(".product-review-section .review-list-container .review-list-info .review-sorting"));
-  
+
   reviewEvent();
 
   fixBtnEvent();
@@ -104,6 +106,17 @@ function controlOption() {
 
     clearMenuText(menus);
   }
+}
+
+function detailBarEvent() {
+  const detailBarLink = $(".detail-bar a");
+
+  //상세 페이지 마이크로 링크 이동
+  detailBarLink.on("click", function(e) {
+    e.preventDefault();
+    
+    $(window).scrollTo(this.hash, 300);
+  });
 }
 
 function productEvent() {
