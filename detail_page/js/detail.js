@@ -2,6 +2,8 @@ $(function() {
   detailImgEvent();
   
   productEvent();
+  
+  reviewEvent();
 
   fixBtnEvent();
 });
@@ -23,6 +25,26 @@ function productEvent() {
   //상품 클릭 시 상세페이지로
   product.on("click", function() {
     window.open("../detail_page/detail_page.html", "_blank").focus();
+  });
+}
+
+function reviewEvent() {
+  const reviews = $(".product-review-section .review-list-container .review-list .review");
+  const reviewExpandBtns = reviews.find(".review-expand-btn");
+  const reviewReduceBtns = reviews.find(".review-reduce-btn");
+
+  //더보기 버튼 클릭 시
+  reviewExpandBtns.on("click", function() {
+    $(this).parents(".review").addClass("expand-review");
+    $(this).siblings(".review-reduce-btn").show();
+    $(this).hide();
+  });
+
+  //접기 버튼 클릭 시
+  reviewReduceBtns.on("click", function() {
+    $(this).parents(".review").removeClass("expand-review");
+    $(this).siblings(".review-expand-btn").show();
+    $(this).hide();
   });
 }
 
