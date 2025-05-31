@@ -1,5 +1,7 @@
 $(function() {
   productEvent();
+
+  interiorEvent();
 });
 
 function productEvent() {
@@ -25,5 +27,18 @@ function productEvent() {
   //상품에서 마우스가 나가면 옵션 비표시
   product.on("mouseleave blur", function() {
     $(this).find(".product-option").hide();
+  });
+}
+
+function interiorEvent() {
+  const interiorInfos = $(".interior .interior-info");
+  let idx = 0;
+
+  //인테리어 포인트 마우스 호버 시 해당 상품에 포커스
+  interiorInfos.on("mouseenter", function() {
+    idx = interiorInfos.index($(this));
+
+    interiorInfos.removeClass("interior-focus");
+    interiorInfos.eq(idx).addClass("interior-focus");
   });
 }
