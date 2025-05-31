@@ -668,7 +668,7 @@
   border-radius: 50%;
   background-color: #f8f8f8;
   overflow: hidden;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 }
 
 .metaphor-box .metaphor .metaphor-title {
@@ -982,12 +982,15 @@
 .best-section .best-btn-box .best-btn {
   display: block;
   width: 190px;
+  box-sizing: border-box;
+  padding: 5px 0;
   border: 1px solid #999;
   border-radius: 20px;
   color: #999;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .best-section .best-btn-box .best-btn:hover {
