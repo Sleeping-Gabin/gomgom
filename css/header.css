@@ -149,6 +149,7 @@
   width: 190px;
   margin-top: 2px;
   float: right;
+  z-index: 70;
   position: relative;
 }
 
