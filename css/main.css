@@ -1138,7 +1138,6 @@
 .interior-section {
   width: 1240px;
   margin: 0 auto 160px;
-  justify-content: space-between;
   overflow: hidden;
 }
 
@@ -1208,9 +1207,18 @@
   margin: 5px;
   box-sizing: border-box;
   padding: 15px 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: white;
   float: left;
+  position: relative;
+}
+
+.interior-section .interior .interior-info .interior-txt .interior-enter-btn {
+  color: #999;
+  font-size: 14px;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
 }
 
 .interior-section .interior .interior-info.interior-focus .interior-point i {
