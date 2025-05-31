@@ -1,8 +1,8 @@
 /* ---------- footer ---------- */
 /* ----- footer nav ----- */
 .footer-nav-outer {
-  height: 35px;
   border-top: 1px solid #d9d9d9;
+  overflow: hidden;
 }
 
 .footer-nav {
@@ -16,6 +16,11 @@
 
 .footer-nav .footer-menu {
   float: left;
+}
+
+.footer-nav .footer-menu .divide-line {
+  margin: 0 10px;
+  color: #d9d9d9;
 }
 
 .footer-nav .footer-menu li a {
@@ -37,9 +42,14 @@
 }
 
 .footer-nav .footer-sns li i {
+  width: 20px;
   padding: 0 5px;
   line-height: 35px;
   color: #999;
+}
+
+.footer-nav .footer-sns li:hover i {
+  color: #2b2b2b;
 }
 
 .footer-nav .footer-sns li:last-child i {
@@ -48,7 +58,7 @@
 
 /* ----- footer ----- */
 .footer-outer {
-  background-color: #f8f8f8;
+  background-color: #f0f0f0;
 }
 
 .footer {
@@ -63,6 +73,10 @@
   border: 1px solid #2b2b2b;
   color: #2b2b2b;
   border-radius: 20px;
+}
+
+.footer .footer-btn:hover {
+  background-color: #d9d9d9;
 }
 
 .footer .company-info {
@@ -90,7 +104,7 @@
 
 .footer .company-info .company-txt .footer-btn {
   margin-left: 5px;
-  padding: 0 7px;
+  padding: 2px 7px;
   font-size: 12px;
 }
 
@@ -119,7 +133,7 @@
 }
 
 .footer .customer-info .customer-center {
-  width: 300px;
+  width: 295px;
   float: left;
 }
 
@@ -134,15 +148,28 @@
 }
 
 .footer .customer-info .bank {
-  width: 250px;
+  width: 295px;
   font-size: 14px;
   float: right;
+}
+
+.footer .customer-info .footer-btn {
+  display: block;
+  width: 190px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  padding: 3px 10px;
+  text-align: center;
+}
+
+.footer .customer-info .bank p:last-of-type {
+  margin-bottom: 20px;
 }
 
 /* ---------- top/bottom button ---------- */
 .fix-btn-box {
   margin-top: -45px;
-  z-index: 100;
+  z-index: 200;
   position: fixed;
   top: 50%;
   right: 50px;
