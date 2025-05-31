@@ -17,6 +17,10 @@
   right: 10px;
 }
 
+.dropdown .dropdown-close-btn {
+  display: none;
+}
+
 .dropdown .dropdown-menu {
   width: 100%;
   height: 0;
@@ -30,14 +34,19 @@
 
 .dropdown .dropdown-menu ul {
   box-sizing: border-box;
-  padding: 5px 10px;
+  padding: 5px 0;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: white;
 }
 
 .dropdown .dropdown-menu ul li {
+  padding: 0 10px;
   line-height: 25px;
+}
+
+.dropdown .dropdown-menu ul li:hover {
+  background-color: #EFC6B7;
 }
 
 /* ---------- breadcrumb ---------- */
@@ -704,6 +713,10 @@
   color: #EFC6B7;
 }
 
+.product-review-section .review-write-container .write-top .star-dropdown .dropdown-menu ul li:hover {
+  color: white;
+}
+
 .product-review-section .review-write-container .write-top .camera-btn {
   text-align: center;
   line-height: 30px;
@@ -929,6 +942,7 @@
   display: inline-block;
   padding: 0 15px;
   font-size: 14px;
+  color: #999;
   cursor: pointer;
 }
 

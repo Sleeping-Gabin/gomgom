@@ -34,14 +34,19 @@
 
 .dropdown .dropdown-menu ul {
   box-sizing: border-box;
-  padding: 5px 10px;
+  padding: 5px 0;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: white;
 }
 
 .dropdown .dropdown-menu ul li {
+  padding: 0 10px;
   line-height: 25px;
+}
+
+.dropdown .dropdown-menu ul li:hover {
+  background-color: #EFC6B7;
 }
 
 /* ---------- cart ---------- */
@@ -1290,8 +1295,5 @@
 .photo-review-section .photo-review .review-info .star-rating {
   margin-bottom: 5px;
   font-size: 14px;
-}
-
-.photo-review-section .photo-review .review-info .star-rating i {
   color: #EFC6B7;
 }
