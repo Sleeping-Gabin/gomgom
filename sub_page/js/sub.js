@@ -1,5 +1,7 @@
 $(function() {
   productEvent();
+
+  fixBtnEvent();
 });
 
 function productEvent() {
@@ -31,5 +33,30 @@ function productEvent() {
   productIconList.children("li:nth-of-type(3)").on("click", function() {
     $(".modal-cart-bg").css("display", "flex");
     return false;
+  });
+}
+
+function fixBtnEvent() {
+  let maxHeight = $(document).innerHeight();
+  const speed = 1000 / maxHeight;
+
+  //top 버튼 클릭 시 부드럽게 상승
+  $(".fix-btn-box .top-btn").on("click", function(e) {
+    e.preventDefault();
+
+    $("html, body").stop().animate(
+      { scrollTop: "0" },
+      speed * $(window).scrollTop()
+    );
+  });
+
+  //bottom 버튼 클릭 시 부드럽게 하강
+  $(".fix-btn-box .bottom-btn").on("click", function(e) {
+    e.preventDefault();
+    
+    $("html, body").stop().animate(
+      { scrollTop: maxHeight },
+      speed * (maxHeight - $(window).scrollTop())
+    );
   });
 }
