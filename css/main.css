@@ -878,61 +878,24 @@
   justify-content: space-between;
 }
 
-/* ---------- wide banner ---------- */
-.wide-banner {
-  margin-bottom: 200px;
-  animation: ani-wide-banner-bg 8s infinite;
-}
-
-.wide-banner-img {
+/* ---------- banner zone ---------- */
+.banner-zone {
   width: 1240px;
+  margin: 0 auto 200px;
+  overflow: hidden;
+}
+
+.banner-zone .banner {
+  width: 610px;
   height: 120px;
-  margin: 0 auto;
-  animation: ani-wide-banner 8s infinite;
-}
-
-@keyframes ani-wide-banner-bg {
-  0% {
-  background-color: #ffe1d7;
+  margin-right: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  float: left;
   }
 
-  40% {
-  background-color: #ffe1d7;
-  }
-
-  50% {
-    background-color: #f0deff;
-  }
-
-  90% {
-  background-color: #f0deff;
-  }
-
-  100% {
-  background-color: #ffe1d7;
-  }
-}
-
-@keyframes ani-wide-banner {
-  0% {
-    background-image: url(./img/wide_banner_1.jpg);
-  }
-
-  40% {
-    background-image: url(./img/wide_banner_1.jpg);
-  }
-
-  50% {
-    background-image: url(./img/wide_banner_2.jpg);
-  }
-
-  90% {
-    background-image: url(./img/wide_banner_2.jpg);
-  }
-
-  100% {
-    background-image: url(./img/wide_banner_1.jpg);
-  }
+.banner-zone .banner:last-child {
+  margin-right: 0;
 }
 
 /* ----------- best ---------- */
@@ -1239,24 +1202,61 @@
   display: block;
 }
 
-/* ---------- banner zone ---------- */
-.banner-zone {
+/* ---------- wide banner ---------- */
+.wide-banner {
+  margin-bottom: 200px;
+  animation: ani-wide-banner-bg 8s infinite;
+}
+
+.wide-banner-img {
   width: 1240px;
-  margin: 0 auto 200px;
-  overflow: hidden;
-}
-
-.banner-zone .banner {
-  width: 610px;
   height: 120px;
-  margin-right: 20px;
-  border-radius: 20px;
-  overflow: hidden;
-  float: left;
+  margin: 0 auto;
+  animation: ani-wide-banner 8s infinite;
 }
 
-.banner-zone .banner:last-child {
-  margin-right: 0;
+@keyframes ani-wide-banner-bg {
+  0% {
+  background-color: #ffe1d7;
+  }
+
+  40% {
+  background-color: #ffe1d7;
+  }
+
+  50% {
+    background-color: #f0deff;
+  }
+
+  90% {
+  background-color: #f0deff;
+  }
+
+  100% {
+  background-color: #ffe1d7;
+}
+}
+
+@keyframes ani-wide-banner {
+  0% {
+    background-image: url(./img/wide_banner_1.jpg);
+  }
+
+  40% {
+    background-image: url(./img/wide_banner_1.jpg);
+  }
+
+  50% {
+    background-image: url(./img/wide_banner_2.jpg);
+  }
+
+  90% {
+    background-image: url(./img/wide_banner_2.jpg);
+  }
+
+  100% {
+    background-image: url(./img/wide_banner_1.jpg);
+  }
 }
 
 /* ---------- photo review ---------- */
