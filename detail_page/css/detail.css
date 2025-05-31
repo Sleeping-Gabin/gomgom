@@ -983,11 +983,11 @@
   float: left;
 }
 
-.product-review-section .review-list-container .review-list .review .review-btn-box {
+.product-review-section .review-list-container .review-list .review .review-control-box {
   float: right;
 }
 
-.product-review-section .review-list-container .review-list .review .review-btn-box label {
+.product-review-section .review-list-container .review-list .review .review-control-box .review-control-btn {
   display: inline-block;
   padding: 0 15px;
   font-size: 14px;

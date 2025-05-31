@@ -6,6 +6,8 @@ $(function() {
   reviewEvent();
 
   fixBtnEvent();
+
+  passwordModal();
 });
 
 function detailImgEvent() {
@@ -32,6 +34,7 @@ function reviewEvent() {
   const reviews = $(".product-review-section .review-list-container .review-list .review");
   const reviewExpandBtns = reviews.find(".review-expand-btn");
   const reviewReduceBtns = reviews.find(".review-reduce-btn");
+  const reviewControlBtns = reviews.find(".review-control-btn");
 
   //더보기 버튼 클릭 시
   reviewExpandBtns.on("click", function() {
@@ -45,6 +48,10 @@ function reviewEvent() {
     $(this).parents(".review").removeClass("expand-review");
     $(this).siblings(".review-expand-btn").show();
     $(this).hide();
+  });
+
+  reviewControlBtns.on("click", function() {
+    $(".modal-pw-bg").css("display", "flex");
   });
 }
 
@@ -70,5 +77,14 @@ function fixBtnEvent() {
       { scrollTop: maxHeight },
       speed * (maxHeight - $(window).scrollTop())
     );
+  });
+}
+
+function passwordModal() {
+  const closeBtn = $(".modal-pw .modal-close-btn");
+
+  //닫기 버튼 클릭 시 닫음
+  closeBtn.on("click", function() {
+    $(".modal-pw-bg").css("display", "none");
   });
 }
