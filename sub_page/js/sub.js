@@ -26,4 +26,10 @@ function productEvent() {
   product.on("mouseleave blur", function() {
     $(this).find(".product-option").hide();
   });
+  
+  //장바구니 아이콘 클릭 시 장바구니 모달창 표시
+  productIconList.children("li:nth-of-type(3)").on("click", function() {
+    $(".modal-cart-bg").css("display", "flex");
+    return false;
+  });
 }

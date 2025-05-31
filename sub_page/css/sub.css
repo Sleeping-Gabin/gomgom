@@ -41,15 +41,10 @@
 }
 
 /* ---------- cart ---------- */
-#chk-cart,
 #chk-cart-opt-01,
 #chk-cart-opt-02,
 #chk-cart-opt-03 {
   display: none;
-}
-
-#chk-cart:checked ~ .modal-cart-bg {
-  display: flex;
 }
 
 #chk-cart-opt-01:checked ~ .cart-option > li:nth-child(1) .dropdown-menu {
