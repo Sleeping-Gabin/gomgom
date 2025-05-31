@@ -1,6 +1,9 @@
 $(function() {
   viewMiniLogo();
 
+  //상품 정렬 드롭다운 선택 시 텍스트 변경
+  dropdownChangeTxtEvent($(".page-info .sorting"));
+
   productEvent();
 
   fixBtnEvent();
@@ -78,5 +81,16 @@ function fixBtnEvent() {
       { scrollTop: maxHeight },
       speed * (maxHeight - $(window).scrollTop())
     );
+  });
+}
+
+function dropdownChangeTxtEvent(dropdown) {
+  const dropdownList = dropdown.find(".dropdown-menu li");
+
+  dropdownList.on("click", function() {
+    let selectText = $(this).text();
+
+    //선택 메뉴 표시
+    dropdown.children("p").text(selectText);
   });
 }

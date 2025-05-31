@@ -4,6 +4,9 @@ $(function() {
   controlOption();
   
   productEvent();
+
+  //리뷰 정렬 드롭다운 선택 시 텍스트 변경
+  dropdownChangeTxtEvent($(".product-review-section .review-list-container .review-list-info .review-sorting"));
   
   reviewEvent();
 
@@ -168,5 +171,16 @@ function passwordModal() {
   //닫기 버튼 클릭 시 닫음
   closeBtn.on("click", function() {
     $(".modal-pw-bg").css("display", "none");
+  });
+}
+
+function dropdownChangeTxtEvent(dropdown) {
+  const dropdownList = dropdown.find(".dropdown-menu li");
+
+  dropdownList.on("click", function() {
+    let selectText = $(this).text();
+
+    //선택 메뉴 표시
+    dropdown.children("p").text(selectText);
   });
 }
