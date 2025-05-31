@@ -322,6 +322,19 @@
   margin: 0 5px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
+  background-size: cover;
+}
+
+.product .product-img .product-icon li:nth-child(1) .product-icon-img {
+  background-image: url(../images/icon_like.png);
+}
+
+.product .product-img .product-icon li:nth-child(2) .product-icon-img {
+  background-image: url(../images/icon_option.png);
+}
+
+.product .product-img .product-icon li:nth-child(3) .product-icon-img {
+  background-image: url(../images/icon_cart.png);
 }
 
 .product .product-img .product-icon .product-icon-img:hover {
