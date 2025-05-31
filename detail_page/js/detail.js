@@ -1,8 +1,21 @@
 $(function() {
+  detailImgEvent();
+  
   productEvent();
 
   fixBtnEvent();
 });
+
+function detailImgEvent() {
+  const bigImg = $(".product-detail-section .detail-img-container .detail-img-big");
+  const smallImgs = $(".product-detail-section .detail-img-container .detial-img-small-box .detail-img-small");
+
+  //작은 이미지 선택 시 큰 이미지로 보여줌
+  smallImgs.on("click", function() {
+    let imgUrl = $(this).children("img").attr("src");
+    bigImg.css("background-image", `url("${imgUrl}")`);
+  });
+}
 
 function productEvent() {
   const product = $(".product");
