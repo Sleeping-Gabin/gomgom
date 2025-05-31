@@ -2,6 +2,8 @@ $(function() {
   productEvent();
 
   interiorEvent();
+
+  newEvent();
 });
 
 function productEvent() {
@@ -33,6 +35,34 @@ function productEvent() {
   productIconList.children("li:nth-of-type(3)").on("click", function() {
     $(".modal-cart-bg").css("display", "flex");
     return false;
+  });
+}
+
+function newEvent() {
+  const newList = $(".new-section .new-frame > ul");
+
+  //왼쪽 화살표 클릭 시 오른쪽으로 슬라이드
+  $(".new-section .new-left-arrow").on("click", function() {
+    newList.stop().animate(
+      { left: "0" },
+      300,
+      function() {
+        let lastNew = newList.children().slice(-5);
+        $(this).prepend(lastNew).css("left", "-1050px");
+      }
+    );
+  });
+
+  //오른쪽 화살표 클릭 시 왼쪽으로 슬라이드
+  $(".new-section .new-right-arrow").on("click", function() {
+    newList.stop().animate(
+      { left: "-2100px" },
+      300,
+      function() {
+        let firstNew = newList.children().slice(0, 5);
+        $(this).append(firstNew).css("left", "-1050px");
+      }
+    );
   });
 }
 
