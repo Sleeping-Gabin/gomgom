@@ -12,19 +12,21 @@ $(function() {
   fixBtnEvent();
 });
 
+//스크롤 시 gnb에 로고를 보임
 function viewMiniLogo() {
-  const miniLogo = $(".gnb .mini-logo");
+  const miniLogo = document.querySelector(".gnb .mini-logo");
+  const header = document.querySelector(".header");
+  const gnbOuter = document.querySelector(".gnb-outer");
 
-  //스크롤 시 gnb에 로고를 보임
-  $(window).on("scroll", function() {
-    let currentTop = $(window).scrollTop();
-    let headerHeight = $(".header").innerHeight();
+  window.addEventListener("scroll", function() {
+    let currentTop = this.window.scrollY;
+    let headerHeight = header.clientHeight + gnbOuter.clientHeight;
 
-    if (currentTop > headerHeight) {
-      miniLogo.css("width", "120px");
+    if (currentTop > headerHeight) { //헤더 이상으로 스크롤 시 로고 표시
+      miniLogo.style.width = "120px";
     }
     else {
-      miniLogo.css("width", "0px");
+      miniLogo.style.width = "0px";
     }
   });
 }
