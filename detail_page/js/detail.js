@@ -19,12 +19,28 @@ $(function() {
 
 function detailImgEvent() {
   const bigImg = $(".product-detail-section .detail-img-container .detail-img-big");
-  const smallImgs = $(".product-detail-section .detail-img-container .detial-img-small-box .detail-img-small");
+  const smallImgs = $(".product-detail-section .detail-img-container .detail-img-candidate .detail-img-small");
 
   //작은 이미지 선택 시 큰 이미지로 보여줌
   smallImgs.on("click", function() {
     let imgUrl = $(this).children("img").attr("src");
     bigImg.css("background-image", `url("${imgUrl}")`);
+
+    smallImgs.removeClass("select-img");
+    $(this).addClass("select-img");
+  });
+
+  //box slider
+  $(".box-slider").bxSlider({
+    slideWidth: 85,
+    slideMargin: 20,
+    minSlides: 4,
+    maxSlides: 4,
+    moveSlides: 1,
+    speed: 300,
+    pager: false,
+    infiniteLoop: false,
+    hideControlOnEnd: true,
   });
 }
 

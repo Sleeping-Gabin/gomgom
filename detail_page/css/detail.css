@@ -210,58 +210,49 @@
   height: 610px;
   margin-bottom: 20px;
   border-radius: 45px;
+  background-image: url(../images/bd10036_0.jpg);
   background-size: cover;
-  background-image: url("../images/bd10036_1.jpg");
 }
 
-.product-detail-section .detail-img-container .detail-img-candidate {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.product-detail-section .detail-img-container .detail-img-candidate .detail-img-btn label {
-  display: none;
+.product-detail-section .detail-img-container .detail-img-candidate .detail-img-small {
   width: 85px;
-  padding: 10px 0;
-  font-size: 24px;
-  text-align: center;
-  color: #999;
-  cursor: pointer;
-}
-
-.product-detail-section .detail-img-container .detail-img-candidate .detial-img-small-box {
-  width: 400px;
   height: 85px;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-detail-section .detail-img-container .detail-img-candidate .detial-img-small-box ul {
-  width: 800px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.2s;
-}
-
-.product-detail-section .detail-img-container .detial-img-small-box li {
-  display: flex;
-  width: 400px;
-  justify-content: center;
-  float: left;
-}
-
-.product-detail-section .detail-img-container .detial-img-small-box .detail-img-small {
-  width: 85px;
-  height: 85;
-  margin-right: 20px;
+  box-sizing: border-box;
   border-radius: 15px;
   overflow: hidden;
 }
 
-.product-detail-section .detail-img-container .detial-img-small-box .detail-img-small:last-child {
-  margin-right: 0;
+.product-detail-section .detail-img-container .detail-img-candidate .detail-img-small:hover {
+  border: 2px solid #AC7457;
+}
+
+.product-detail-section .detail-img-container .detail-img-candidate .detail-img-small.select-img {
+  border: 2px solid #AC7457;
+}
+
+.product-detail-section .detail-img-container .detail-img-candidate .bx-wrapper {
+  margin: 0 auto;
+  box-shadow: none;
+  border: none;
+}
+
+.product-detail-section .detail-img-container .bx-wrapper .bx-controls-direction a {
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  z-index: 20;
+  background-size: contain;
+  background-position: 0 0;
+}
+
+.product-detail-section .detail-img-container .bx-wrapper .bx-controls-direction .bx-prev {
+  background-image: url(../images/icon_left.png);
+  left: calc((-105px - 48px) / 2 + 10px);
+}
+
+.product-detail-section .detail-img-container .bx-wrapper .bx-controls-direction .bx-next {
+  background-image: url(../images/icon_right.png);
+  right: calc((-105px - 48px) / 2 + 10px);
 }
 
 /* ----- purchase detail ----- */
