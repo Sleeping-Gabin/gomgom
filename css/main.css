@@ -476,6 +476,7 @@
   color: #2b2b2b;
   position: absolute;
   top: 90px;
+  transition: all 200ms;
 }
 
 .visual-main .swiper-slide.left-txt .visual-txt,
@@ -502,6 +503,7 @@
 .visual-main .swiper-slide .visual-enter-btn {
   position: absolute;
   bottom: 120px;
+  transition: all 200ms;
 }
 
 .visual-main .swiper-pagination-bullet {

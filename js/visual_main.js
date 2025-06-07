@@ -21,46 +21,44 @@ const swiper = new Swiper(".swiper", {
   },
 
   on: {
-    slideChangeTransitionEnd: s => {
+    slideChangeTransitionEnd: function(s) { //슬라이드 변경 후 글자 애니메이션
       let slide = s.slides[s.activeIndex];
-      let txt = $(slide).find(".visual-txt");
-      let btn = $(slide).find(".visual-enter-btn");
+      let txt = slide.querySelector(".visual-txt");
+      let btn = slide.querySelector(".visual-enter-btn");
+      
+      txt.style.top = "90px";
+      txt.style.opacity = "1";
 
-      txt.stop().animate({
-        top: "90px",
-        opacity: 1,
-      }, 200);
-
-      btn.stop().animate({
-        bottom: "120px",
-        opacity: 1,
-      }, 200);
+      btn.style.bottom = "120px";
+      btn.style.opacity = "1";
     },
 
-    slideChangeTransitionStart	: s => {
+    slideChangeTransitionStart	: function(s) { //글자 위치 초기화
       let slide = s.slides[s.activeIndex];
-      let txt = $(slide).find(".visual-txt");
-      let btn = $(slide).find(".visual-enter-btn");
+      let txt = slide.querySelector(".visual-txt");
+      let btn = slide.querySelector(".visual-enter-btn");
+      
+      txt.style.top = "120px";
+      txt.style.opacity = "0";
 
-      txt.css("top", "120px").css("opacity", 0);
-      btn.css("bottom", "90px").css("opacity", 0);
-    }
+      btn.style.bottom = "90px";
+      btn.style.opacity = "0";
+    },
   },
 });
 
 
 //navigation을 마우스 올렸을 때만 보이게
-const visualMain = $(".visual-main");
-const nextBtn = $(swiper.navigation.nextEl);
-const prevBtn = $(swiper.navigation.prevEl);
+const visualMain = document.querySelector(".visual-main");
+const nextBtn = swiper.navigation.nextEl;
+const prevBtn = swiper.navigation.prevEl;
 
-
-visualMain.on("mouseenter", function() {
-  nextBtn.removeClass('swiper-button-hidden');
-  prevBtn.removeClass('swiper-button-hidden');
+visualMain.addEventListener("mouseenter", function() {
+  nextBtn.classList.remove("swiper-button-hidden");
+  prevBtn.classList.remove("swiper-button-hidden");
 });
 
-visualMain.on("mouseleave", function() {
- nextBtn.addClass('swiper-button-hidden');
-  prevBtn.addClass('swiper-button-hidden');
+visualMain.addEventListener("mouseleave", function() {
+  nextBtn.classList.add("swiper-button-hidden");
+  prevBtn.classList.add("swiper-button-hidden");
 });
