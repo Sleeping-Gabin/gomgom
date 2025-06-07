@@ -30,32 +30,29 @@ function viewMiniLogo() {
 }
 
 function productEvent() {
-  const product = $(".product");
-  const productIconList = $(".product .product-icon");
-
   //상품 클릭 시 상세페이지로
-  product.on("click", function() {
+  $(document).on("click", ".product", function() {
     window.open("./detail_page/detail_page.html", "_blank").focus();
   });
 
   //관심 아이콘 클릭 시 이동하지 않음
-  productIconList.children("li:nth-of-type(1)").on("click", function() {
+  $(document).on("click", ".product .product-icon li:nth-of-type(1)", function() {
     return false;
   });
 
   //옵션 아이콘 클릭 시 옵션 표시/비표시
-  productIconList.children("li:nth-of-type(2)").on("click", function() {
+  $(document).on("click", ".product .product-icon li:nth-of-type(2)", function() {
     $(this).parent().siblings(".product-option").toggle();
     return false;
   });
 
   //상품에서 마우스가 나가면 옵션 비표시
-  product.on("mouseleave blur", function() {
+  $(document).on("mouseleave blur", ".product", function() {
     $(this).find(".product-option").hide();
   });
   
-  //장바구니 아이콘 클릭 시 장바구니 모달창 띄움
-  productIconList.children("li:nth-of-type(3)").on("click", function() {
+  //장바구니 아이콘 클릭 시 장바구니 모달창 표시
+  $(document).on("click", ".product .product-icon li:nth-of-type(3)", function() {
     $(".modal-cart-bg").css("display", "flex");
     return false;
   });
@@ -93,7 +90,7 @@ function mdEvent() {
   const mdList = $(".md-section .md-frame > ul");
 
   //비활성화 상태의 상품 클릭 시 이동하지 않음
-  $(".md-section .md-on").on("click", function() {
+  $(".md-section").on("click", ".md-on", function() {
     return false;
   });
 

@@ -145,26 +145,26 @@ function productEvent() {
 }
 
 function reviewEvent() {
-  const reviews = $(".product-review-section .review-list-container .review-list .review");
-  const reviewExpandBtns = reviews.find(".review-expand-btn");
-  const reviewReduceBtns = reviews.find(".review-reduce-btn");
-  const reviewControlBtns = reviews.find(".review-control-btn");
+
+  //후기 리스트
+  const reviewList = $(".product-review-section .review-list-container .review-list");
 
   //더보기 버튼 클릭 시
-  reviewExpandBtns.on("click", function() {
+  reviewList.on("click", ".review .review-expand-btn", function() {
     $(this).parents(".review").addClass("expand-review");
     $(this).siblings(".review-reduce-btn").show();
     $(this).hide();
   });
 
   //접기 버튼 클릭 시
-  reviewReduceBtns.on("click", function() {
+  reviewList.on("click", ".review .review-reduce-btn", function() {
     $(this).parents(".review").removeClass("expand-review");
     $(this).siblings(".review-expand-btn").show();
     $(this).hide();
   });
 
-  reviewControlBtns.on("click", function() {
+  //수정, 삭제 버튼 클릭 시 비밀번호 입력 화면 표시
+  reviewList.on("click", ".review .review-control-btn", function() {
     $(".modal-pw-bg").css("display", "flex");
   });
 }
