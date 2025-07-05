@@ -195,14 +195,44 @@ function fixBtnEvent() {
 }
 
 function passwordModal() {
+  const pwBg = $(".modal-pw-bg");
   const closeBtn = $(".modal-pw .modal-close-btn");
 
   //닫기 버튼 클릭 시 닫음
   closeBtn.on("click", function() {
-    $(".modal-pw-bg").css("display", "none");
+    pwBg.css("display", "none");
+  });
+
+  //배경 클릭 시 닫기
+  pwBg.on("click", function(e) {
+    if (e.target === e.currentTarget) {
+      pwBg.css("display", "none");
+    }
+  });
+
+  //스크롤 금지
+  pwBg.on("wheel", function(e) {
+    e.preventDefault();
   });
 }
 
+//문의 작성 창 이벤트 추가
+function addQnaModalEvent() {
+  const qnaBg = $(".modal-qna-bg");
+  const chkQna = $("#chk-qna-write");
+
+  //배경 클릭 시 닫기
+  qnaBg.on("click", function(e) {
+    if (e.target === e.currentTarget) {
+      chkQna.prop("checked", false);
+    }
+  });
+
+  //스크롤 금지
+  qnaBg.on("wheel", function(e) {
+    e.preventDefault();
+  });
+}
 function dropdownChangeTxtEvent(dropdown) {
   const dropdownList = dropdown.find(".dropdown-menu li");
 

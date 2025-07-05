@@ -12,6 +12,18 @@ $(function() {
     cartBg.css("display", "none");
   });
 
+  //배경 클릭 시 닫기
+  cartBg.on("click", function(e) {
+    if (e.target === e.currentTarget) {
+      cartBg.css("display", "none");
+    }
+  });
+
+  //스크롤 금지
+  cartBg.on("wheel", function(e) {
+    e.preventDefault();
+  });
+
   //선택 가능한 옵션 메뉴 클릭시 메뉴를 보이거나 닫음
   cartOption.on("click", ".dropdown.selectable", function() {
     let currentHeight = $(this).children(".dropdown-menu").innerHeight();
