@@ -83,28 +83,6 @@ function controlOption() {
     }
   });
 
-  //메뉴를 엶
-  function openMenu(menu) {
-    let menuHeight = menu.find(".dropdown-menu ul").outerHeight();
-
-    menu.children(".dropdown-close-btn").show();
-    menu.children(".dropdown-open-btn").hide();
-    menu.children(".dropdown-menu").animate(
-      { height: menuHeight },
-      100
-    );
-  }
-
-  //메뉴를 닫음
-  function closeMenu(menu) {
-    menu.children(".dropdown-close-btn").hide();
-    menu.children(".dropdown-open-btn").show();
-    menu.children(".dropdown-menu").animate(
-      { height: 0 },
-      100
-    );
-  }
-
   //메뉴 이름 초기화
   function clearMenuText(menus) {
     menus.each((i, menu) => {
@@ -232,6 +210,26 @@ function addQnaModalEvent() {
   qnaBg.on("wheel", function(e) {
     e.preventDefault();
   });
+}
+
+//드롭다운 메뉴를 엶
+function openMenu(dropdown, speed=100) {
+  let menuHeight = dropdown.find(".dropdown-menu ul").outerHeight();
+
+  dropdown.children(".dropdown-close-btn").show();
+  dropdown.children(".dropdown-open-btn").hide();
+  dropdown.children(".dropdown-menu").animate({ 
+    height: menuHeight 
+  }, speed);
+}
+
+//드롭다운 메뉴를 닫음
+function closeMenu(dropdown, speed=100) {
+  dropdown.children(".dropdown-close-btn").hide();
+  dropdown.children(".dropdown-open-btn").show();
+  dropdown.children(".dropdown-menu").animate({ 
+    height: 0 
+  }, speed);
 }
 function dropdownChangeTxtEvent(dropdown) {
   const dropdownList = dropdown.find(".dropdown-menu li");

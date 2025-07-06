@@ -37,15 +37,13 @@ $(function() {
     }
   });
 
-  //메뉴 선택시
-  dropdownList.on("click", function() {
+  //각 메뉴 아이템 선택 시 텍스트 변경
+  dropdowns.each((i, dropdown) => addMenuChangeTxtEvent($(dropdown)));
+
+  //메뉴 아이템 선택 시 다른 옵션의 선택 가능 여부 변경
+  dropdownItems.on("click", function() {
     const dropdown = $(this).parents(".dropdown");
-
     let idx = dropdowns.index(dropdown);
-    let selectText = $(this).text();
-
-    //선택 메뉴 표시
-    dropdown.children("p").text(selectText);
 
     if (idx < dropdowns.length-1) {
       //다음 옵션을 선택 가능하게 하고, 이후 옵션들을 초기화
@@ -57,29 +55,7 @@ $(function() {
       clearOptions(dropdowns);
     }
   });
-  
-  //메뉴를 엶
-  function openMenu(menu) {
-    let menuHeight = menu.find(".dropdown-menu ul").outerHeight();
-  
-    menu.children(".dropdown-close-btn").show();
-    menu.children(".dropdown-open-btn").hide();
-    menu.children(".dropdown-menu").animate(
-      { height: menuHeight },
-      100
-    );
-  }
-  
-  //메뉴를 닫음
-  function closeMenu(menu) {
-    menu.children(".dropdown-close-btn").hide();
-    menu.children(".dropdown-open-btn").show();
-    menu.children(".dropdown-menu").animate(
-      { height: 0 },
-      100
-    );
-  }
-  
+    
   //메뉴 이름 초기화
   function clearMenuText(menus) {
     menus.each((i, menu) => {
@@ -98,3 +74,35 @@ $(function() {
     clearMenuText(menus);
   }
 });
+
+//드롭다운 메뉴를 엶
+function openMenu(dropdown, speed=100) {
+  let menuHeight = dropdown.find(".dropdown-menu ul").outerHeight();
+
+  dropdown.children(".dropdown-close-btn").show();
+  dropdown.children(".dropdown-open-btn").hide();
+  dropdown.children(".dropdown-menu").animate({ 
+    height: menuHeight 
+  }, speed);
+}
+
+//드롭다운 메뉴를 닫음
+function closeMenu(dropdown, speed=100) {
+  dropdown.children(".dropdown-close-btn").hide();
+  dropdown.children(".dropdown-open-btn").show();
+  dropdown.children(".dropdown-menu").animate({ 
+    height: 0 
+  }, speed);
+}
+
+//드롭다운 메뉴 선택 시 텍스트 변경 이벤트 추가
+function addMenuChangeTxtEvent(dropdown) {
+  const dropdownItems = dropdown.find(".dropdown-menu li");
+
+  dropdownItems.on("click", function() {
+    let selectText = $(this).html();
+
+    //선택 메뉴 표시
+    dropdown.children("p").html(selectText);
+  });
+}
