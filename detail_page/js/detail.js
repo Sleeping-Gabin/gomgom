@@ -123,6 +123,17 @@ function productEvent() {
 }
 
 function reviewEvent() {
+  //후기 작성
+  const reviewStar = $(".product-review-section .review-write-container .star-dropdown")
+
+  addMenuChangeTxtEvent(reviewStar);
+
+
+  //후기 정렬
+  const reviewSorting = $(".product-review-section .review-list-container .review-list-info .review-sorting");
+
+  addMenuChangeTxtEvent(reviewSorting);
+
 
   //후기 리스트
   const reviewList = $(".product-review-section .review-list-container .review-list");
