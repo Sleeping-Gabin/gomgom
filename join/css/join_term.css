@@ -1,0 +1,141 @@
+/* ----- input ----- */
+input[type="checkbox"] {
+  appearance: none;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+input[type="checkbox"]:checked {
+  background-image: url(./img/chkbox.png);
+  background-size: cover;
+  border: none;
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  padding: 8px 15px;
+  border-radius: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-btn {
+  border: none;
+  background-color: #AC7457;
+  color: white;
+}
+
+.sub-btn {
+  border: 1px solid #d9d9d9;
+  background: none;
+  color: #666;
+}
+
+/* ----- */
+.join-title {
+  margin: 50px 0 60px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* ---------- join term form ---------- */
+.join-term-form {
+  width: 610px;
+  margin: 0 auto 100px;
+}
+
+.join-term-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.join-term-form .form-title {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.join-term-form .all-title {
+  margin-bottom: 50px;
+}
+
+.join-term-form .all-title .notice {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.join-term-form .form-title label .require {
+  margin-right: 3px;
+  color: #AC7457;
+}
+
+.join-term-form .form-title a {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.join-term-form .form-title a i {
+  margin-left: 3px;
+  font-size: 11px;
+  color: #999;
+}
+
+.join-term-form .term-txt {
+  height: 160px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  overflow: auto;
+}
+
+.join-term-form .term-txt:last-of-type {
+  margin-bottom: 80px;
+}
+
+.join-term-form .marketing-chk-box {
+  overflow: hidden;
+}
+
+.join-term-form .marketing-chk-box .marketing-all-title {
+  float: left;
+}
+
+.join-term-form .marketing-chk-box .marketing-sub-box {
+  float: right;
+}
+
+.join-term-form .marketing-chk-box .marketing-sub-box .form-title {
+  float: left;
+}
+
+.join-term-form .marketing-chk-box .marketing-sub-box .marketing-email-title {
+  margin-right: 20px;
+}
+
+.join-term-form .marketing-txt {
+  height: 100px;
+}
+
+.join-term-form .form-btn-box {
+  display: flex;
+  justify-content: center;
+}
+
+.join-term-form .form-btn-box .btn {
+  width: 190px;
+}
+
+.join-term-form .form-btn-box .cancel-btn {
+  margin-right: 20px;
+}

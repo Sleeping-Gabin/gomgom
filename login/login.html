@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>곰곰가구</title>
+  
+  <!-- favicon -->
+  <link rel="icon" href="../favicon.png">
+  
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  
+  <!-- style sheet -->
+  <link rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  
+  <!-- javascript -->
+  <script src="./js/login.js" defer></script>
+</head>
+<body>
+  <!-- header -->
+  <input type="checkbox" id="chk-gnb">
+  <header class="header" id="header">
+    <nav class="gnb-top">
+      <ul>
+        <li><a href="./login.html">로그인</a></li>
+        <li><a href="../join/join_term.html">회원가입</a></li>
+        <li><a href="#!">마이페이지</a></li>
+        <li><a href="#!">장바구니</a></li>
+      </ul>
+    </nav><!--gnb top-->
+    <div class="logo">
+      <a href="../index.html"><img src="./images/logo.png" alt="로고"></a>
+    </div>
+  </header>
+  <div class="gnb-outer">
+    <nav class="gnb">
+      <div class="mini-logo"><a href="../index.html"><img src="./images/mini_logo.png" alt="로고"></a></div>
+      <label for="chk-gnb" class="menu-icon open-menu-btn"><i class="fa-solid fa-bars"></i></label>
+      <label for="chk-gnb" class="menu-icon close-menu-btn"><i class="fa-solid fa-xmark"></i></label>
+      <ul class="gnb-menu">
+        <li>
+          <a href="../sub_page/sub_page.html">침실</a>
+          <div class="sub-category">
+            <ul>
+              <li><a href="../sub_page/sub_page.html">침대</a></li>
+              <li><a href="../sub_page/sub_page.html">매트리스</a></li>
+              <li><a href="../sub_page/sub_page.html">협탁</a></li>
+              <li><a href="../sub_page/sub_page.html">화장대</a></li>
+              <li><a href="../sub_page/sub_page.html">화장대 의자</a></li>
+            </ul>
+          </div>
+        </li><!--침실-->
+        <li>
+          <a href="../sub_page/sub_page.html">거실</a>
+          <div class="sub-category">
+            <ul>
+              <li><a href="../sub_page/sub_page.html">소파</a></li>
+              <li><a href="../sub_page/sub_page.html">거실장</a></li>
+              <li><a href="../sub_page/sub_page.html">테이블</a></li>
+            </ul>
+          </div>
+        </li><!--거실-->
+        <li>
+          <a href="../sub_page/sub_page.html">주방</a>
+          <div class="sub-category">
+            <ul>
+              <li><a href="../sub_page/sub_page.html">식탁</a></li>
+              <li><a href="../sub_page/sub_page.html">식탁 의자</a></li>
+              <li><a href="../sub_page/sub_page.html">주방 수납장</a></li>
+            </ul>
+          </div>
+        </li><!--주방-->
+        <li>
+          <a href="../sub_page/sub_page.html">드레스룸</a>
+          <div class="sub-category">
+            <ul>
+              <li><a href="../sub_page/sub_page.html">슬라이딩 옷장</a></li>
+              <li><a href="../sub_page/sub_page.html">여닫이 옷장</a></li>
+              <li><a href="../sub_page/sub_page.html">행거</a></li>
+            </ul>
+          </div>
+        </li><!--드레스룸-->
+        <li>
+          <a href="../sub_page/sub_page.html">학생/서재</a>
+          <div class="sub-category">
+            <ul>
+              <li><a href="../sub_page/sub_page.html">책상</a></li>
+              <li><a href="../sub_page/sub_page.html">책장</a></li>
+              <li><a href="../sub_page/sub_page.html">의자</a></li>
+            </ul>
+          </div>
+        </li><!--학생/서재-->
+        <li>
+          <a href="../sub_page/sub_page.html">수납가구</a>
+          <div class="sub-category">
+            <ul>
+              <li><a href="../sub_page/sub_page.html">서랍장</a></li>
+              <li><a href="../sub_page/sub_page.html">선반</a></li>
+              <li><a href="../sub_page/sub_page.html">수납장</a></li>
+            </ul>
+          </div>
+        </li><!--수납가구-->
+        <li><a href="../sub_page/sub_page.html">신상품</a></li><!--신상품-->
+        <li><a href="../sub_page/sub_page.html">인기상품</a></li><!--인기상품-->
+      </ul><!--gnb menu-->
+      <div class="search-box">
+        <input type="search">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <div class="search-info">
+          <p class="search-title">최근 검색어</p>
+          <ul class="recently-search">
+            <li>소파<i class="fa-solid fa-xmark"></i></li>
+          </ul>
+          <div class="hashtag">
+            <a href="#!">#원목수납장</a>
+            <a href="#!">#책상</a>
+            <a href="#!">#행거</a>
+          </div>
+        </div><!--search info-->
+      </div><!--search box-->
+      <div class="all-category">
+        <ul>
+          <li>
+            <a href="../sub_page/sub_page.html">침실</a>
+            <ul>
+              <li><a href="../sub_page/sub_page.html">침대</a></li>
+              <li><a href="../sub_page/sub_page.html">매트리스</a></li>
+              <li><a href="../sub_page/sub_page.html">협탁</a></li>
+              <li><a href="../sub_page/sub_page.html">화장대</a></li>
+              <li><a href="../sub_page/sub_page.html">화장대 의자</a></li>
+            </ul>
+          </li><!--침실-->
+          <li>
+            <a href="../sub_page/sub_page.html">거실</a>
+            <ul>
+              <li><a href="../sub_page/sub_page.html">소파</a></li>
+              <li><a href="../sub_page/sub_page.html">거실장</a></li>
+              <li><a href="../sub_page/sub_page.html">테이블</a></li>
+            </ul>
+          </li><!--거실-->
+          <li>
+            <a href="../sub_page/sub_page.html">주방</a>
+            <ul>
+              <li><a href="../sub_page/sub_page.html">식탁</a></li>
+              <li><a href="../sub_page/sub_page.html">식탁 의자</a></li>
+              <li><a href="../sub_page/sub_page.html">주방 수납장</a></li>
+            </ul>
+          </li><!--주방-->
+          <li>
+            <a href="../sub_page/sub_page.html">드레스룸</a>
+            <ul>
+              <li><a href="../sub_page/sub_page.html">슬라이딩 옷장</a></li>
+              <li><a href="../sub_page/sub_page.html">여닫이 옷장</a></li>
+              <li><a href="../sub_page/sub_page.html">행거</a></li>
+            </ul>
+          </li><!--드레스룸-->
+          <li>
+            <a href="../sub_page/sub_page.html">학생/서재</a>
+            <ul>
+              <li><a href="../sub_page/sub_page.html">책상</a></li>
+              <li><a href="../sub_page/sub_page.html">책장</a></li>
+              <li><a href="../sub_page/sub_page.html">의자</a></li>
+            </ul>
+          </li><!--학생/서재-->
+          <li>
+            <a href="../sub_page/sub_page.html">수납가구</a>
+            <ul>
+              <li><a href="../sub_page/sub_page.html">서랍장</a></li>
+              <li><a href="../sub_page/sub_page.html">선반</a></li>
+              <li><a href="../sub_page/sub_page.html">수납장</a></li>
+            </ul>
+          </li><!--수납가구-->
+          <li><a href="../sub_page/sub_page.html">신상품</a></li><!--신상품-->
+          <li><a href="../sub_page/sub_page.html">인기상품</a></li><!--인기상품-->
+        </ul>
+      </div><!--all category-->
+    </nav><!--gnb-->
+  </div>
+
+  <p class="login-title">로그인</p>
+
+  <!--login form-->
+  <form action="#" class="login-form">
+    <div class="form-item id-item">
+      <label for="user-id">아이디</label>
+      <input type="text" class="user-id" id="user-id" name="user-id" placeholder="아이디" required>
+    </div><!--id-->
+
+    <div class="form-item pw-item">
+      <label for="user-pw">비밀번호</label>
+      <input type="password" class="user-pw" id="user-pw" name="user-pw" placeholder="비밀번호" required>
+    </div><!--pw-->
+
+    <button type="button" class="login-btn main-btn btn">로그인</button>
+    <div class="text-btn-box">
+      <div class="find-btn-box">
+        <a href="../find/find_id.html" class="find-id-btn">아이디 찾기</a>
+        <span>|</span>
+        <a href="../find/find_pw.html" class="find-pw-btn">비밀번호 찾기</a>
+      </div>
+      <a href="../join/join_term.html" class="join-btn">회원가입</a>
+    </div>
+  </form>
+
+  <!-- footer -->
+  <div class="footer-nav-outer">
+    <nav class="footer-nav">
+      <ul class="footer-menu">
+        <li><a href="#!">회사 소개</a></li>
+        <li><a href="#!">이용 안내</a></li>
+        <li><a href="#!">개인 정보 처리방침</a></li>
+        <li><a href="#!">이용약관</a></li>
+        <li class="divide-line">|</li>
+        <li><a href="#!">공지사항</a></li>
+        <li><a href="#!">이벤트</a></li>
+      </ul>
+      <ul class="footer-sns">
+        <li><i class="fa-brands fa-x-twitter"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-facebook-f"></i></li>
+      </ul>
+    </nav>
+  </div><!--footer nav outer-->
+  <div class="footer-outer">
+    <footer class="footer" id="footer">
+      <div class="company-info">
+        <div class="footer-logo">
+          <img src="./images/footer_logo.png" alt="흑백 로고">
+        </div>
+        <div class="company-txt">
+          <p>곰곰 가구<span class="divide-line">|</span>대표 성가빈</p>
+          <p>부산광역시 부산진구 중앙대로 669 그린컴퓨터아카데미 302호</p>
+          <p>개인정보관리자 홍길동<span class="divide-line">|</span>dlapdlf@gomgom.co.kr</p>
+          <p>통신판매신고 2125-부산부산진-0011<span class="divide-line">|</span>사업자등록번호 123-45-98765<a href="#!" class="footer-btn">사업자 등록 확인</a></p>
+        </div><!--company txt-->
+        <p class="copyright">
+          Copyright © GomGomGagu. All right reserved.
+        </p>
+      </div><!--company info-->
+      <div class="customer-info">
+        <div class="customer-center">
+          <p class="customer-title">고객 센터</p>
+          <p class="call">051 - 123 - 4567</p>
+          <p class="time">평일 9:00 ~ 18:00</p>
+          <p class="time">점심시간 12:00 ~ 13:00</p>
+          <p class="time">주말/공휴일 휴무</p>
+        </div><!--customer center-->
+        <div class="bank">
+          <p class="customer-title">계좌 정보</p>
+          <p>부산은행 123-12345-6789</p>
+          <p>예금주 곰곰가구</p>
+          <a href="#!" class="footer-btn">1:1 문의</a>
+          <a href="#!" class="footer-btn">자주 묻는 질문</a>  
+        </div><!--bank-->
+      </div><!--customer info-->
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* ----- input ----- */
+input {
+  box-sizing: border-box;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline-color: #AC7457;
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  padding: 8px 15px;
+  border-radius: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-btn {
+  border: none;
+  background-color: #AC7457;
+  color: white;
+}
+
+.sub-btn {
+  border: 1px solid #d9d9d9;
+  background: none;
+  color: #666;
+}
+
+/* ----- */
+.login-title {
+  margin: 100px 0 60px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.login-btn-box {
+  display: flex;
+  width: 400px;
+  margin: 0 auto 50px;
+  justify-content: space-between;
+}
+
+.login-btn-box .btn {
+  width: calc((100% - 20px) / 2);
+  border: 1px solid #ccc;
+  background: none;
+  color: #666;
+}
+
+.login-btn-box .select-btn {
+  border: 1px solid #AC7457;
+  color: #AC7457;
+}
+
+/* ---------- login form ---------- */
+.login-form {
+  width: 295px;
+  margin: 0 auto 100px;
+}
+
+.login-form .form-item {
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  width: 295px;
+}
+
+.login-form .pw-item {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.login-form > .login-btn {
+  width: 295px;
+  margin-bottom: 5px;
+}
+
+.login-form .text-btn-box {
+  padding: 5px;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.login-form .text-btn-box .find-btn-box {
+  float: left;
+}
+
+.login-form .text-btn-box .join-btn {
+  float: right;
+}

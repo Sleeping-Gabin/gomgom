@@ -1,0 +1,269 @@
+/* ----- input ----- */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  box-sizing: border-box;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  outline-color: #AC7457;
+}
+
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled {
+  background-color: #f5f5f5;
+}
+
+input.error {
+  border-color: #d34f4f;
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  appearance: none;
+}
+
+input[type="radio"]:checked {
+  border: none;
+  background-image: url(./img/radio.png);
+  background-size: cover;
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  padding: 8px 15px;
+  border-radius: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-btn {
+  border: none;
+  background-color: #AC7457;
+  color: white;
+}
+
+.sub-btn {
+  border: 1px solid #d9d9d9;
+  background: none;
+  color: #666;
+}
+
+/* ----- */
+.find-title {
+  margin: 100px 0 60px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.find-btn-box {
+  display: flex;
+  width: 400px;
+  margin: 0 auto 50px;
+  justify-content: space-between;
+}
+
+.find-btn-box .btn {
+  width: calc((100% - 20px) / 2);
+  border: 1px solid #ccc;
+  background: none;
+  color: #666;
+}
+
+.find-btn-box .select-btn {
+  border: 1px solid #AC7457;
+  color: #AC7457;
+}
+
+/* ---------- find form ---------- */
+.find-form .radio-box:has(#rad-find-email:checked) ~ .call-item {
+  display: none;
+}
+
+.find-form .radio-box:has(#rad-find-email:checked) ~ .email-item {
+  margin-bottom: 80px;
+}
+
+.find-form .radio-box:has(#rad-find-email:checked) ~ .call-label {
+  display: none;
+}
+
+.find-form .radio-box:has(#rad-find-call:checked) ~ .email-item {
+  display: none;
+}
+
+.find-form .radio-box:has(#rad-find-call:checked) ~ .call-item {
+  margin-bottom: 80px;
+}
+
+
+.find-form .radio-box:has(#rad-find-call:checked) ~ .email-label {
+  display: none;
+}
+
+.find-form {
+  width: 400px;
+  margin: 0 auto 100px;
+}
+
+.find-form .radio-box {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.find-form .radio-box label {
+  display: flex;
+  margin-right: 25px;
+  align-items: center;
+  float: left;
+}
+
+.find-form .radio-box input[type="radio"] {
+  margin-right: 10px;
+}
+
+.find-form > label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.find-form > input[type="text"] {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.find-form .form-item {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.find-form .form-item .error-txt {
+  font-size: 12px;
+  line-height: 10px;
+  color: #d34f4f;
+  position: absolute;
+  bottom: -15px;
+  left: 5px;
+}
+
+.find-form .email-item span {
+  width: 20px;
+  text-align: center;
+}
+
+.find-form .email-item .email {
+  width: 111px;
+}
+
+.find-form .email-item .email:nth-of-type(2) {
+  margin-right: 20px;
+}
+
+.find-form .email-item .email-select {
+  width: 138px;
+  box-sizing: border-box;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  color: #666;
+  line-height: 20px;
+  font-size: 14px;
+  position: relative;
+}
+
+.find-form .email-item .email-select .selected-email i {
+  float: right;
+  line-height: 20px;
+}
+
+.find-form .email-item .email-select .selected-email .close-btn {
+  display: none;
+}
+
+.find-form .email-item .email-select ul {
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  z-index: 50;
+  position: absolute;
+  top: 36px;
+  left: 0;
+}
+
+.find-form .email-item .email-select ul li {
+  padding: 0 5px;
+  line-height: 25px;
+}
+
+.find-form .email-item .email-select ul li:hover {
+  background-color: #EFC6B7;
+}
+
+.find-form .call-item .call {
+  width: 138px;
+}
+
+.find-form .call-item .call:first-of-type {
+  width: 85px;
+}
+
+.find-form .call-item .call-line {
+  width: 20px;
+  text-align: center;
+}
+
+.find-form .form-btn-box {
+  display: flex;
+  justify-content: center;
+}
+
+.find-form .form-btn-box .btn {
+  width: 190px;
+}
+
+.find-form .form-btn-box .login-btn {
+  margin-right: 20px;
+}
+
+/* ---------- result box ---------- */
+.result-box {
+  display: none;
+  margin: 0 auto 100px;
+  padding-top: 50px;
+}
+
+.result-box .result-txt {
+  text-align: center;
+  font-size: 20px;
+}
+
+.result-box .result-txt span {
+  font-weight: bold;
+}
+
+.result-box .btn {
+  width: calc(85px * 2 + 20px);
+  margin: 150px auto 0;
+}
