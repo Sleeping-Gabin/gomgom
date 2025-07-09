@@ -1,23 +1,23 @@
 $(function() {
-  detailImgEvent();
+  controlDetailImg();
 
   controlOption();
 
-  detailBarEvent();
+  addDetailBarEvent();
 
-  productEvent();
+  addProductEvent();
 
-  //리뷰 정렬 드롭다운 선택 시 텍스트 변경
-  dropdownChangeTxtEvent($(".product-review-section .review-list-container .review-list-info .review-sorting"));
+  controlReviewSection();
 
-  reviewEvent();
+  addFixBtnEvent();
 
-  fixBtnEvent();
+  addPasswordEvent();
 
-  passwordModal();
+  addQnaModalEvent();
 });
 
-function detailImgEvent() {
+//상세 이미지의 이벤트 추가
+function controlDetailImg() {
   const bigImg = $(".product-detail-section .detail-img-container .detail-img-big");
   const smallImgs = $(".product-detail-section .detail-img-container .detail-img-candidate .detail-img-small");
 
@@ -44,10 +44,11 @@ function detailImgEvent() {
   });
 }
 
+//상품 옵션 선택 이벤트 추가
 function controlOption() {
   const option = $(".product-detail-section .purchase-detail-container .detail-option");
-  const dropdowns = $(".product-detail-section .purchase-detail-container .detail-option .dropdown");
-  const dropdownList = $(".product-detail-section .purchase-detail-container .detail-option .dropdown .dropdown-menu li");
+  const dropdowns = option.find(".dropdown");
+  const dropdownItems = dropdowns.find(".dropdown-menu li");
 
   //선택 가능한 옵션 메뉴 클릭시 메뉴를 보이거나 닫음
   option.on("click", ".dropdown.selectable", function() {
@@ -72,13 +73,13 @@ function controlOption() {
     //선택 메뉴 표시
     dropdown.children("p").text(selectText);
 
-    if (idx < dropdowns.length-1) {
+    if (idx < dropdowns.length-1) { //마지막 옵션이 아닐 때
       //다음 옵션을 선택 가능하게 하고, 이후 옵션들을 초기화
       dropdowns.eq(idx+1).addClass("selectable");
       dropdowns.slice(idx+2).removeClass("selectable");
       clearMenuText(dropdowns.slice(idx+1));
     }
-    else {
+    else { //마지막 옵션
       clearOptions(dropdowns);
     }
   });
@@ -102,7 +103,8 @@ function controlOption() {
   }
 }
 
-function detailBarEvent() {
+//상세 페이지 탭 바 이벤트 추가
+function addDetailBarEvent() {
   const detailBarLink = $(".detail-bar a");
 
   //상세 페이지 마이크로 링크 이동
@@ -113,16 +115,18 @@ function detailBarEvent() {
   });
 }
 
-function productEvent() {
+//관련 상품 이벤트 추가
+function addProductEvent() {
   const product = $(".product");
 
   //상품 클릭 시 상세페이지로
   product.on("click", function() {
-    window.open("../detail_page/detail_page.html", "_blank").focus();
+    window.open("./detail_page.html", "_blank").focus();
   });
 }
 
-function reviewEvent() {
+//상품 후기 섹션 이벤트 추가
+function controlReviewSection() {
   //후기 작성
   const reviewStar = $(".product-review-section .review-write-container .star-dropdown")
 
@@ -155,10 +159,12 @@ function reviewEvent() {
   //수정, 삭제 버튼 클릭 시 비밀번호 입력 화면 표시
   reviewList.on("click", ".review .review-control-btn", function() {
     $(".modal-pw-bg").css("display", "flex");
+    $(".modal-pw input[type=text]").focus();
   });
 }
 
-function fixBtnEvent() {
+//top/bottom 버튼 이벤트 추가
+function addFixBtnEvent() {
   let maxHeight = $(document).innerHeight();
   const speed = 1000 / maxHeight;
 
@@ -166,24 +172,23 @@ function fixBtnEvent() {
   $(".fix-btn-box .top-btn").on("click", function(e) {
     e.preventDefault();
 
-    $("html, body").stop().animate(
-      { scrollTop: "0" },
-      speed * $(window).scrollTop()
-    );
+    $("html, body").stop().animate({ 
+      scrollTop: "0" 
+    }, speed * $(window).scrollTop());
   });
 
   //bottom 버튼 클릭 시 부드럽게 하강
   $(".fix-btn-box .bottom-btn").on("click", function(e) {
     e.preventDefault();
     
-    $("html, body").stop().animate(
-      { scrollTop: maxHeight },
-      speed * (maxHeight - $(window).scrollTop())
-    );
+    $("html, body").stop().animate({ 
+      scrollTop: maxHeight 
+    }, speed * (maxHeight - $(window).scrollTop()));
   });
 }
 
-function passwordModal() {
+//비밀번호 입력 창 이벤트 추가
+function addPasswordEvent() {
   const pwBg = $(".modal-pw-bg");
   const closeBtn = $(".modal-pw .modal-close-btn");
 
@@ -242,13 +247,15 @@ function closeMenu(dropdown, speed=100) {
     height: 0 
   }, speed);
 }
-function dropdownChangeTxtEvent(dropdown) {
-  const dropdownList = dropdown.find(".dropdown-menu li");
 
-  dropdownList.on("click", function() {
-    let selectText = $(this).text();
+//드롭다운 메뉴 선택 시 텍스트 변경 이벤트 추가
+function addMenuChangeTxtEvent(dropdown) {
+  const dropdownItems = dropdown.find(".dropdown-menu li");
+
+  dropdownItems.on("click", function() {
+    let selectText = $(this).html();
 
     //선택 메뉴 표시
-    dropdown.children("p").text(selectText);
+    dropdown.children("p").html(selectText);
   });
 }

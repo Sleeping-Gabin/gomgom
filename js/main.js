@@ -1,15 +1,15 @@
 $(function() {
   viewMiniLogo();
 
-  productEvent();
+  addProductEvent();
 
-  interiorEvent();
+  addInteriorEvent();
 
-  newEvent();
+  controlNewSlide();
 
-  mdEvent();
+  controlMdSlide();
   
-  fixBtnEvent();
+  addFixBtnEvent();
 });
 
 //스크롤 시 gnb에 로고를 보임
@@ -31,7 +31,8 @@ function viewMiniLogo() {
   });
 }
 
-function productEvent() {
+//상품 이벤트 추가
+function addProductEvent() {
   //상품 클릭 시 상세페이지로
   $(document).on("click", ".product", function() {
     window.open("./detail_page/detail_page.html", "_blank").focus();
@@ -60,35 +61,35 @@ function productEvent() {
   });
 }
 
-function newEvent() {
+//신상품 섹션 슬라이드 애니메이션 적용
+function controlNewSlide() {
   const newList = $(".new-section .new-frame > ul");
 
   //왼쪽 화살표 클릭 시 오른쪽으로 슬라이드
   $(".new-section .new-left-arrow").on("click", function() {
-    newList.stop().animate(
-      { left: "0" },
-      300,
-      function() {
-        let lastNew = newList.children().slice(-5);
-        $(this).prepend(lastNew).css("left", "-1050px");
-      }
-    );
+    newList.stop().animate({
+      left: "0" 
+    }, 300,
+    function() {
+      let lastNew = newList.children().slice(-5);
+      $(this).prepend(lastNew).css("left", "-1050px");
+    });
   });
 
   //오른쪽 화살표 클릭 시 왼쪽으로 슬라이드
   $(".new-section .new-right-arrow").on("click", function() {
-    newList.stop().animate(
-      { left: "-2100px" },
-      300,
-      function() {
-        let firstNew = newList.children().slice(0, 5);
-        $(this).append(firstNew).css("left", "-1050px");
-      }
-    );
+    newList.stop().animate({
+      left: "-2100px" 
+    }, 300,
+    function() {
+      let firstNew = newList.children().slice(0, 5);
+      $(this).append(firstNew).css("left", "-1050px");
+    });
   });
 }
 
-function mdEvent() {
+//md 추천 섹션 슬라이드 애니메이션 적용
+function controlMdSlide() {
   const mdList = $(".md-section .md-frame > ul");
 
   //비활성화 상태의 상품 클릭 시 이동하지 않음
@@ -105,18 +106,17 @@ function mdEvent() {
     mdListItem.eq(2).addClass("md-focus");
 
     //오른쪽으로 슬라이드
-    mdList.stop().animate(
-      { left: "-640px" },
-      300,
-      function() {
-        mdListItem.last().remove();
+    mdList.stop().animate({
+      left: "-640px" 
+    }, 300,
+    function() {
+      mdListItem.last().remove();
 
-        let prependMd = mdListItem.eq(4).clone();
-        mdList.prepend(prependMd);
+      let prependMd = mdListItem.eq(4).clone();
+      mdList.prepend(prependMd);
 
-        mdList.css("left", "-955px");
-      }
-    );
+      mdList.css("left", "-955px");
+    });
   });
 
   $(".md-section .md-right-arrow").on("click", function() {
@@ -127,22 +127,22 @@ function mdEvent() {
     mdListItem.eq(4).addClass("md-focus");
 
     //왼쪽으로 슬라이드
-    mdList.stop().animate(
-      { left: "-1270px"},
-      300,
-      function() {
-        mdListItem.first().remove();
+    mdList.stop().animate({
+      left: "-1270px"
+    }, 300,
+    function() {
+      mdListItem.first().remove();
 
-        let appendMd = mdListItem.eq(2).clone();
-        mdList.append(appendMd);
+      let appendMd = mdListItem.eq(2).clone();
+      mdList.append(appendMd);
 
-        mdList.css("left", "-955px");
-      }
-    );
+      mdList.css("left", "-955px");
+    });
   });
 }
 
-function interiorEvent() {
+//인테리어 섹션 이벤트 추가
+function addInteriorEvent() {
   const interiorInfos = $(".interior .interior-info");
   let idx = 0;
 
@@ -155,7 +155,8 @@ function interiorEvent() {
   });
 }
 
-function fixBtnEvent() {
+//top/bottom 버튼 이벤트 추가
+function addFixBtnEvent() {
   let maxHeight = $(document).innerHeight();
   const speed = 1000 / maxHeight;
 
@@ -163,19 +164,17 @@ function fixBtnEvent() {
   $(".fix-btn-box .top-btn").on("click", function(e) {
     e.preventDefault();
 
-    $("html, body").stop().animate(
-      { scrollTop: "0" },
-      speed * $(window).scrollTop()
-    );
+    $("html, body").stop().animate({ 
+      scrollTop: "0" 
+    }, speed * $(window).scrollTop());
   });
 
   //bottom 버튼 클릭 시 부드럽게 하강
   $(".fix-btn-box .bottom-btn").on("click", function(e) {
     e.preventDefault();
     
-    $("html, body").stop().animate(
-      { scrollTop: maxHeight },
-      speed * (maxHeight - $(window).scrollTop())
-    );
+    $("html, body").stop().animate({ 
+      scrollTop: maxHeight 
+    }, speed * (maxHeight - $(window).scrollTop()));
   });
 }

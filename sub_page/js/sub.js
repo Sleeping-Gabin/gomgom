@@ -2,11 +2,11 @@ $(function() {
   viewMiniLogo();
 
   //상품 정렬 드롭다운 선택 시 텍스트 변경
-  dropdownChangeTxtEvent($(".page-info .sorting"));
+  addMenuChangeTxtEvent($(".page-info .sorting"));
 
-  productEvent();
+  addProductEvent();
 
-  fixBtnEvent();
+  addFixBtnEvent();
 });
 
 //스크롤 시 gnb에 로고를 보임
@@ -28,8 +28,8 @@ function viewMiniLogo() {
   });
 }
 
-
-function productEvent() {
+//상품 이벤트 추가
+function addProductEvent() {
   const product = $(".product");
   const productIconList = $(".product .product-icon");
 
@@ -61,7 +61,8 @@ function productEvent() {
   });
 }
 
-function fixBtnEvent() {
+//top/bottom 버튼 이벤트 추가
+function addFixBtnEvent() {
   let maxHeight = $(document).innerHeight();
   const speed = 1000 / maxHeight;
 
@@ -69,30 +70,29 @@ function fixBtnEvent() {
   $(".fix-btn-box .top-btn").on("click", function(e) {
     e.preventDefault();
 
-    $("html, body").stop().animate(
-      { scrollTop: "0" },
-      speed * $(window).scrollTop()
-    );
+    $("html, body").stop().animate({ 
+      scrollTop: "0" 
+    }, speed * $(window).scrollTop());
   });
 
   //bottom 버튼 클릭 시 부드럽게 하강
   $(".fix-btn-box .bottom-btn").on("click", function(e) {
     e.preventDefault();
     
-    $("html, body").stop().animate(
-      { scrollTop: maxHeight },
-      speed * (maxHeight - $(window).scrollTop())
-    );
+    $("html, body").stop().animate({ 
+      scrollTop: maxHeight 
+    }, speed * (maxHeight - $(window).scrollTop()));
   });
 }
 
-function dropdownChangeTxtEvent(dropdown) {
-  const dropdownList = dropdown.find(".dropdown-menu li");
+//드롭다운 메뉴 선택 시 텍스트 변경 이벤트 추가
+function addMenuChangeTxtEvent(dropdown) {
+  const dropdownItems = dropdown.find(".dropdown-menu li");
 
-  dropdownList.on("click", function() {
-    let selectText = $(this).text();
+  dropdownItems.on("click", function() {
+    let selectText = $(this).html();
 
     //선택 메뉴 표시
-    dropdown.children("p").text(selectText);
+    dropdown.children("p").html(selectText);
   });
 }

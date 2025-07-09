@@ -220,11 +220,6 @@
   height: 445px;
 }
 
-.product > a {
-  display: block;
-  height: 100%;
-}
-
 .product .product-img {
   width: 295px;
   height: 295px;

@@ -1,9 +1,10 @@
 $(function() {
   const cartBg = $(".modal-cart-bg");
-  const closeBtn = $(".modal-cart .modal-close-btn");
-  const cartOption = $(".modal-cart .cart-container .cart-option");
-  const dropdowns = $(".modal-cart .cart-container .cart-option .dropdown");
-  const dropdownList = $(".modal-cart .cart-container .cart-option .dropdown .dropdown-menu li");
+  const cart = $(".modal-cart");
+  const closeBtn = cart.find(".modal-close-btn");
+  const cartOption = cart.find(".cart-container .cart-option");
+  const dropdowns = cartOption.find(".dropdown");
+  const dropdownItems = dropdowns.find(".dropdown-menu li");
 
   //닫기 버튼 클릭시 닫기
   closeBtn.on("click", function() {
@@ -45,13 +46,13 @@ $(function() {
     const dropdown = $(this).parents(".dropdown");
     let idx = dropdowns.index(dropdown);
 
-    if (idx < dropdowns.length-1) {
+    if (idx < dropdowns.length-1) { //마지막 옵션이 아닐 때
       //다음 옵션을 선택 가능하게 하고, 이후 옵션들을 초기화
       dropdowns.eq(idx+1).addClass("selectable");
       dropdowns.slice(idx+2).removeClass("selectable");
       clearMenuText(dropdowns.slice(idx+1));
     }
-    else {
+    else { //마지막 옵션
       clearOptions(dropdowns);
     }
   });
