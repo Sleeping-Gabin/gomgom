@@ -1,10 +1,10 @@
+import { sorting, filteringByPrice, changePage } from "./product.js";
+
 $(function() {
   viewMiniLogo();
 
-  //상품 정렬 드롭다운 선택 시 텍스트 변경
-  addMenuChangeTxtEvent($(".page-info .sorting"));
-
-  addProductEvent();
+  addSortingMenuEvent();
+  addFilteringInputEvent();
 
   addFixBtnEvent();
 });
@@ -25,39 +25,6 @@ function viewMiniLogo() {
     else {
       miniLogo.style.width = "0px";
     }
-  });
-}
-
-//상품 이벤트 추가
-function addProductEvent() {
-  const product = $(".product");
-  const productIconList = $(".product .product-icon");
-
-  //상품 클릭 시 상세페이지로
-  product.on("click", function() {
-    window.open("../detail_page/detail_page.html", "_blank").focus();
-  });
-
-  //관심 아이콘 클릭 시 이동하지 않음
-  productIconList.children("li:nth-of-type(1)").on("click", function() {
-    return false;
-  });
-
-  //옵션 아이콘 클릭 시 옵션 표시
-  productIconList.children("li:nth-of-type(2)").on("click", function() {
-    $(this).parent().siblings(".product-option").toggle();
-    return false;
-  });
-
-  //상품에서 마우스가 나가면 옵션 비표시
-  product.on("mouseleave blur", function() {
-    $(this).find(".product-option").hide();
-  });
-  
-  //장바구니 아이콘 클릭 시 장바구니 모달창 표시
-  productIconList.children("li:nth-of-type(3)").on("click", function() {
-    $(".modal-cart-bg").css("display", "flex");
-    return false;
   });
 }
 
@@ -85,14 +52,79 @@ function addFixBtnEvent() {
   });
 }
 
-//드롭다운 메뉴 선택 시 텍스트 변경 이벤트 추가
-function addMenuChangeTxtEvent(dropdown) {
-  const dropdownItems = dropdown.find(".dropdown-menu li");
+function addSortingMenuEvent() {
+  const sortingMenu = $(".page-info .sorting");
+  const sortingItems = sortingMenu.find(".dropdown-menu li");
 
-  dropdownItems.on("click", function() {
+  sortingMenu.on("click", function() {
+    let currentHeight = $(this).children(".dropdown-menu").innerHeight();
+
+    if (currentHeight == 0) {
+      openMenu($(this));
+    }
+    else {
+      closeMenu($(this));
+    }
+  });
+
+  sortingItems.on("click", function() {
     let selectText = $(this).html();
+    let idx = $(this).index();
 
     //선택 메뉴 표시
-    dropdown.children("p").html(selectText);
+    sortingMenu.children("p").html(selectText);
+    sorting(idx);
+    changePage(1);
   });
+}
+
+function addFilteringInputEvent() {
+  const filteringBox = document.querySelector(".page-info .filtering");
+  const minPriceInput = filteringBox.querySelector(".min-price");
+  const maxPriceInput = filteringBox.querySelector(".max-price");
+
+  let minPrice = parseInt(minPriceInput.value);
+  let maxPrice = parseInt(maxPriceInput.value);
+
+  
+  minPriceInput.addEventListener("change", filtering);
+  maxPriceInput.addEventListener("change", filtering);
+
+  function filtering() {
+    let newMinPrice = parseInt(minPriceInput.value);
+    let newMaxPrice = parseInt(maxPriceInput.value);
+
+    if (newMinPrice > newMaxPrice && newMinPrice && newMaxPrice) {
+      alert("최소 가격보다 최대 가격이 더 커야합니다.");
+      minPriceInput.value = minPrice;
+      maxPriceInput.value = maxPrice;
+    }
+    else {
+      minPrice = minPriceInput.value;
+      maxPrice = maxPriceInput.value;
+    }
+
+    filteringByPrice(minPrice, maxPrice);
+    changePage(1);
+  }
+}
+
+//드롭다운 메뉴를 엶
+function openMenu(dropdown, speed=100) {
+  let menuHeight = dropdown.find(".dropdown-menu ul").outerHeight();
+
+  dropdown.children(".dropdown-close-btn").show();
+  dropdown.children(".dropdown-open-btn").hide();
+  dropdown.children(".dropdown-menu").animate({ 
+    height: menuHeight 
+  }, speed);
+}
+
+//드롭다운 메뉴를 닫음
+function closeMenu(dropdown, speed=100) {
+  dropdown.children(".dropdown-close-btn").hide();
+  dropdown.children(".dropdown-open-btn").show();
+  dropdown.children(".dropdown-menu").animate({ 
+    height: 0 
+  }, speed);
 }

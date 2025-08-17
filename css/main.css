@@ -293,6 +293,7 @@
   position: absolute;
   bottom: 70px;
   left: 50%;
+  overflow: auto;
 }
 
 .product .product-img .product-option .product-option-txt {
