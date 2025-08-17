@@ -32,7 +32,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
 
   <!-- js -->
-  <script src="./js/detail.js"></script>
+  <script type="module" src="./js/detail.js"></script>
+  <script type="module" src="./js/order.js" defer></script>
+  <script type="module" src="./js/write.js" defer></script>
 </head>
 <body>
   <!-- header -->
@@ -258,8 +260,8 @@
     <div class="purchase-detail-container">
       <p class="detail-title">프린홈 브릴 LED 리노 평상 침대 SS/Q (매트 선택)</p>
       <div class="detail-price-info">
-        <p><span>원가</span>339,900원</p>
-        <p><span>판매가</span>199,900원</p>
+        <p><span>원가</span>339,000원</p>
+        <p><span>판매가</span>199,000원</p>
         <p><span>마일리지</span>1%</p>
         <p><span>배송비</span>무료</p>
       </div><!--detail price info-->
@@ -301,31 +303,19 @@
             <i class="fa-solid fa-chevron-down dropdown-open-btn dropdown-btn"></i>
             <div class="dropdown-menu">
               <ul>
-                <li>화이트</li>
-                <li>메이플</li>
-                <li>그레이</li>
+                <li>화이트<span class="add-price"></span></li>
+                <li>메이플<span class="add-price"></span></li>
+                <li>그레이<span class="add-price"></span></li>
               </ul>
             </div>
           </div>
         </li>
       </ul><!--detail option-->
       <ul class="product-order">
-        <li>
-          <p class="order-info">
-            슈퍼싱글 SS/침대 프레임(매트리스 미포함)/화이트
-          </p>
-          <input type="text" value="1" class="order-num">
-          <div class="order-num-control">
-            <i class="fa-solid fa-plus"></i>
-            <i class="fa-solid fa-minus"></i>
-          </div><!--order num control-->
-          <p class="order-price">19,9900 원</p>
-          <div class="order-delete-btn"><i class="fa-solid fa-xmark"></i></div>
-        </li>
       </ul><!--product order-->
       <div class="product-price">
         <p>총 상품 금액</p>
-        <p class="total-price">199,900 원</p>
+        <p class="total-price">0원</p>
       </div><!--cart price-->
       <a href="#!" class="purchase-btn big-purchase-btn">바로 구매</a>
       <a href="#!" class="purchase-btn small-purchase-btn">관심 상품</a>
@@ -336,11 +326,11 @@
   <!-- detail bar -->
   <div class="detail-bar-outer">
     <nav class="detail-bar">
-      <a href="#detail-info">상세 정보</a>
-      <a href="#related-product">관련 상품</a>
-      <a href="#delivery-change">배송/교환 안내</a>
-      <a href="#product-review">상품 후기(7)</a>
-      <a href="#product-qna">상품 문의(13)</a>
+      <a href="#detail-info" class="detail-info-tab">상세 정보</a>
+      <a href="#related-product" class="related-product-tab">관련 상품</a>
+      <a href="#delivery-change" class="delivery-change-tab">배송/교환 안내</a>
+      <a href="#product-review" class="product-review-tab">상품 후기(<span class="count">0</span>)</a>
+      <a href="#product-qna" class="product-qna-tab">상품 문의(<span class="count">0</span>)</a>
     </nav>
   </div>
 
@@ -412,8 +402,6 @@
     </section>
 
     <!-- product review -->
-    <input type="checkbox" id="chk-star">
-    <input type="checkbox" id="chk-review-sorting">
     <p class="detail-section-title" id="product-review">상품 후기</p>
     <section class="product-review-section">
       <div class="star-rating-container">
@@ -428,7 +416,7 @@
             <div class="star-line">
               <div class="star-color-line"></div>
             </div>
-            <p>4</p>
+            <p class="star-num">4</p>
           </li><!--5점-->
           <li>
             <i class="fa-solid fa-star"></i>
@@ -436,7 +424,7 @@
             <div class="star-line">
               <div class="star-color-line"></div>
             </div>
-            <p>2</p>
+            <p class="star-num">2</p>
           </li><!--4점-->
           <li>
             <i class="fa-solid fa-star"></i>
@@ -444,7 +432,7 @@
             <div class="star-line">
               <div class="star-color-line"></div>
             </div>
-            <p>0</p>
+            <p class="star-num">0</p>
           </li><!--3점-->
           <li>
             <i class="fa-solid fa-star"></i>
@@ -452,7 +440,7 @@
             <div class="star-line">
               <div class="star-color-line"></div>
             </div>
-            <p>1</p>
+            <p class="star-num">1</p>
           </li><!--2점-->
           <li>
             <i class="fa-solid fa-star"></i>
@@ -460,14 +448,14 @@
             <div class="star-line">
               <div class="star-color-line"></div>
             </div>
-            <p>0</p>
+            <p class="star-num">0</p>
           </li><!--1점-->
         </ul><!--star-distibution-->
       </div><!--star rating container-->
 
       <div class="review-write-container">
         <div class="write-top">
-          <label for="chk-star" class="star-dropdown dropdown">
+          <div class="star-dropdown dropdown">
             <p>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -516,23 +504,23 @@
                 </li><!--1점-->
               </ul>
             </div>
-          </label>
+          </div>
           <i class="fa-solid fa-camera camera-btn"></i>
           <div class="review-identify">
-            <p>작성자</p>
-            <input type="text">
-            <p>비밀번호</p>
-            <input type="text">
+            <label for="review-writer">작성자</label>
+            <input type="text" id="review-writer">
+            <label for="review-pw">비밀번호</label>
+            <input type="password" id="review-pw">
           </div><!--review identify-->
         </div><!--write top-->
-        <textarea></textarea>
+        <textarea class="review-txt"></textarea>
         <div class="write-bottom">
           <div class="review-privacy-policy">
             <input type="checkbox" id="chk-review-policy">
             <label for="chk-review-policy">개인 정보 이용 동의<a href="#!">[전체보기]</a></label>
           </div>
           <div class="review-write-btn-box">
-            <a href="#!" class="review-login-btn review-write-btn">로그인</a>
+            <a href="../login/login.html" class="review-login-btn review-write-btn">로그인</a>
             <a href="#!" class="review-register-btn review-write-btn">리뷰 등록</a>
           </div>
         </div><!--write bottom-->
@@ -544,7 +532,7 @@
             <input type="checkbox" id="chk-only-photo">
             <label for="chk-only-photo">포토리뷰만 보기</label>
           </div>
-          <label for="chk-review-sorting" class="dropdown review-sorting">
+          <div class="dropdown review-sorting">
             <p>최신순</p>
             <i class="fa-solid fa-chevron-up dropdown-close-btn dropdown-btn"></i>
             <i class="fa-solid fa-chevron-down dropdown-open-btn dropdown-btn"></i>
@@ -555,209 +543,41 @@
                 <li>낮은 별점순</li>
               </ul>
             </div>
-          </label>
+          </div>
         </div>
         <ul class="review-list">
-          <li class="review">
-            <div class="review-top">
-              <p class="review-star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p class="review-option">슈퍼싱글 SS/베이직 본넬매트/그레이(+90,000)</p>
-            </div><!--review top-->
-            <p class="review-txt">
-              배송도 빠르고 색도 이뻐요.</br>매트도 푹신하고 만족스럽습니다^^
-            </p>
-            <ul class="review-photo">
-              <li><img src="./images/review_7_1.jpg" alt="리뷰 이미지"></li>
-            </ul><!--review photo-->
-            <div class="review-bottom">
-              <p class="writer-info">
-                <span>2025-04-23</span> | <span>iwe3frj**</span>
-              </p>
-              <div class="review-control-box">
-                <a href="#!" class="review-modify-btn review-control-btn">수정</a>
-                <a href="#!" class="review-delete-btn review-control-btn">삭제</a>
-              </div><!--review btn box-->
-            </div><!--review bottom-->
-          </li><!--review-->
-          <li class="review">
-            <div class="review-top">
-              <p class="review-star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p class="review-option">슈퍼싱글 SS/침대 프레임(매트릭스 미포함)/그레이</p>
-            </div><!--review top-->
-            <p class="review-txt">
-              USB 포트가 무척 편해요.</br>하단 수납 공간이 생각보다 작긴한데 LED 빛도 조절 가능하고 좋아요.</br>그레이도 차분한 그레이라 세련되어 보이네요.</br>잘 쓰고 있습니다.
-            </p>
-            <div class="review-reduce-btn review-btn">
-              <i class="fa-solid fa-chevron-up"></i>
-              닫기
-            </div>
-            <div class="review-expand-btn review-btn">
-              <i class="fa-solid fa-chevron-down"></i>
-              더보기
-            </div>
-            <div class="review-bottom">
-              <p class="writer-info">
-                <span>2025-04-16</span> | <span>se4y24**</span>
-              </p>
-              <div class="review-control-box">
-                <a href="#!" class="review-modify-btn review-control-btn">수정</a>
-                <a href="#!" class="review-delete-btn review-control-btn">삭제</a>
-              </div><!--review btn box-->
-            </div><!--review bottom-->
-          </li><!--review-->
-          <li class="review">
-            <div class="review-top">
-              <p class="review-star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </p>
-              <p class="review-option">퀸 Q/잇템 독립매트/메이플(+130,000)</p>
-            </div><!--review top-->
-            <p class="review-txt">
-              높이가 생각보다 높아요. 그것 말고는 나쁘지 않아요.
-            </p>
-            <div class="review-bottom">
-              <p class="writer-info">
-                <span>2025-04-10</span> | <span>o439t**</span>
-              </p>
-              <div class="review-control-box">
-                <a href="#!" class="review-modify-btn review-control-btn">수정</a>
-                <a href="#!" class="review-delete-btn review-control-btn">삭제</a>
-              </div><!--review btn box-->
-            </div><!--review bottom-->
-          </li><!--review-->
         </ul><!--review list-->
       </div><!--review list container-->
       
       <!-- pagination -->
-      <div class="pagination">
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angles-left"></i></a>
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angle-left"></i></a>
-        <ul class="page">
-          <li class="selected-page"><a href="#!">1</a></li>
-          <li><a href="#!">2</a></li>
-          <li><a href="#!">3</a></li>
-        </ul><!--page-->
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angle-right"></i></a>
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angles-right"></i></a>
-      </div><!--pagination-->
+    <div class="pagination">
+      <div class="page-arrow first-page-arrow"><i class="fa-solid fa-angles-left"></i></div>
+      <div class="page-arrow prev-page-arrow"><i class="fa-solid fa-angle-left"></i></div>
+      <ul class="page">
+      </ul><!--page-->
+      <div class="page-arrow next-page-arrow"><i class="fa-solid fa-angle-right"></i></div>
+      <div class="page-arrow last-page-arrow"><i class="fa-solid fa-angles-right"></i></div>
+    </div><!--pagination-->
     </section>
 
     <!-- product qna -->
     <p class="detail-section-title" id="product-qna">상품 문의</p>
     <section class="product-qna-section">
       <ul class="qna-list">
-        <li class="qna">
-          <p class="qna-num">13</p>
-          <p class="qna-secret"><i class="fa-solid fa-lock"></i></p>
-          <p class="qna-title">비밀 문의 입니다.</p>
-          <p class="qna-writer">erijg320** </p>
-          <p class="qna-date">2025-04-23</p>
-          <p class="qna-answer">미답변</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">12</p>
-          <p class="qna-secret"></p>
-          <p class="qna-title">배송 관련</p>
-          <p class="qna-writer">039ojfd**</p>
-          <p class="qna-date">2025-04-23</p>
-          <p class="qna-answer">미답변</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">11</p>
-          <p class="qna-secret"><i class="fa-solid fa-lock"></i></p>
-          <p class="qna-title">비밀 문의 입니다.</p>
-          <p class="qna-writer">xcdjvfw0**</p>
-          <p class="qna-date">2025-04-22</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">10</p>
-          <p class="qna-secret"><i class="fa-solid fa-lock"></i></p>
-          <p class="qna-title">비밀 문의 입니다.</p>
-          <p class="qna-writer">dk90**</p>
-          <p class="qna-date">2025-03-30</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">9</p>
-          <p class="qna-secret"><i class="fa-solid fa-lock"></i></p>
-          <p class="qna-title">비밀 문의 입니다.</p>
-          <p class="qna-writer">fk4903**</p>
-          <p class="qna-date">2025-03-11</p>
-          <p class="qna-answer">미답변</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">8</p>
-          <p class="qna-secret"></p>
-          <p class="qna-title">매트리스는 미포함 인가요?</p>
-          <p class="qna-writer">djf39t**</p>
-          <p class="qna-date">2025-03-03</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">7</p>
-          <p class="qna-secret"><i class="fa-solid fa-lock"></i></p>
-          <p class="qna-title">비밀 문의 입니다.</p>
-          <p class="qna-writer">kf39eir**</p>
-          <p class="qna-date">2025-02-09</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">6</p>
-          <p class="qna-secret"></p>
-          <p class="qna-title">지난 주에 주문했는데 언제 오나요</p>
-          <p class="qna-writer">9430ti**</p>
-          <p class="qna-date">2025-01-28</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">5</p>
-          <p class="qna-secret"></p>
-          <p class="qna-title">색상 변경</p>
-          <p class="qna-writer">DT4rp**</p>
-          <p class="qna-date">2025-01-15</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
-        <li class="qna">
-          <p class="qna-num">4</p>
-          <p class="qna-secret"><i class="fa-solid fa-lock"></i></p>
-          <p class="qna-title">비밀 문의 입니다.</p>
-          <p class="qna-writer">swo46odx**</p>
-          <p class="qna-date">2024-12-07</p>
-          <p class="qna-answer">답변 완료</p>
-        </li><!--qna-->
       </ul><!--qna list-->
-      <div class="qna-write-btn-box">
-        <label for="chk-qna-write" class="qna-write-btn">문의 작성</label>      
+      <div class="qna-btn-box">
+        <div class="qna-btn">문의 작성</div>      
       </div>
 
-      <!-- pagination -->
-      <div class="pagination">
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angles-left"></i></a>
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angle-left"></i></a>
-        <ul class="page">
-          <li class="selected-page"><a href="#!">1</a></li>
-          <li><a href="#!">2</a></li>
-        </ul><!--page-->
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angle-right"></i></a>
-        <a href="#!" class="page-arrow"><i class="fa-solid fa-angles-right"></i></a>
-      </div><!--pagination-->
+    <!-- pagination -->
+    <div class="pagination">
+      <div class="page-arrow first-page-arrow"><i class="fa-solid fa-angles-left"></i></div>
+      <div class="page-arrow prev-page-arrow"><i class="fa-solid fa-angle-left"></i></div>
+      <ul class="page">
+      </ul><!--page-->
+      <div class="page-arrow next-page-arrow"><i class="fa-solid fa-angle-right"></i></div>
+      <div class="page-arrow last-page-arrow"><i class="fa-solid fa-angles-right"></i></div>
+    </div><!--pagination-->
     </section>
   </div><!--wrap-->
   
@@ -822,23 +642,22 @@
   </div>
 
   <!-- qna write -->
-  <input type="checkbox" id="chk-qna-write">
   <div class="modal-qna-bg">
     <div class="modal-qna">
       <div class="modal-title">
         <p>문의 작성</p>
-        <label for="chk-qna-write" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+        <div class="modal-close-btn"><i class="fa-solid fa-xmark"></i></div>
       </div>
       <div class="qna-write-container">
         <div class="qna-identify">
-          <p>작성자</p>
-          <input type="text">
-          <p>비밀번호</p>
-          <input type="text">
+            <label for="qna-writer">작성자</label>
+            <input type="text" id="qna-writer">
+            <label for="qna-pw">비밀번호</label>
+            <input type="password" id="qna-pw">
         </div>
         <div class="qna-title">
-          <p>제목</p>
-          <input type="text">
+          <label for="qna-title">제목</label>
+          <input type="text" id="qna-title">
         </div>
         <div class="qna-txt">
           <textarea></textarea>
@@ -858,19 +677,15 @@
           <input type="checkbox" id="chk-qna-policy">
           <label for="chk-qna-policy">개인 정보 이용 동의<a href="#!">[전체보기]</a></label>
         </div>
-        <label for="chk-qna-write" class="qna-register-btn">등록하기</label>
+        <div class="qna-write-btn-box">
+          <div class="qna-register-btn qna-write-btn">등록하기</div>
+        </div>
       </div><!--qna write container-->
     </div>
   </div>
 
   <!-- check password -->
   <div class="modal-pw-bg">
-    <div class="modal-pw">
-      <p class="modal-title">비밀번호</p>
-      <i class="fa-solid fa-xmark modal-close-btn"></i>
-      <input type="text">
-      <div class="pw-close-btn">확인</div>
-    </div>
   </div>
 </body>
 </html>

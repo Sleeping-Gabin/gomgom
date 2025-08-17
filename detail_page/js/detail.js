@@ -1,3 +1,6 @@
+import { calcAddPrice, addOrder } from "./order.js";
+import { addQna, addReview, changeReviewPage, clearQnaWrite, clearReviewWrite, filteringPhotoReview, sortingReview } from "./write.js";
+
 $(function() {
   controlDetailImg();
 
@@ -7,13 +10,15 @@ $(function() {
 
   addProductEvent();
 
-  controlReviewSection();
+  writeReview();
+  addReviewEvent();
+  
+  writeQna();
+  addQnaModalEvent();
 
   addFixBtnEvent();
 
   addPasswordEvent();
-
-  addQnaModalEvent();
 });
 
 //상세 이미지의 이벤트 추가
@@ -46,16 +51,18 @@ function controlDetailImg() {
 
 //상품 옵션 선택 이벤트 추가
 function controlOption() {
-  const option = $(".product-detail-section .purchase-detail-container .detail-option");
-  const dropdowns = option.find(".dropdown");
-  const dropdownItems = dropdowns.find(".dropdown-menu li");
+  const optionUl = $(".product-detail-section .purchase-detail-container .detail-option");
+  const options = optionUl.find(".dropdown");
+  const optionItems = options.find(".dropdown-menu li");
+
+  let selectOption = new Array(options.length).fill(null);
 
   //선택 가능한 옵션 메뉴 클릭시 메뉴를 보이거나 닫음
-  option.on("click", ".dropdown.selectable", function() {
+  optionUl.on("click", ".dropdown.selectable", function() {
     let currentHeight = $(this).children(".dropdown-menu").innerHeight();
 
     if (currentHeight == 0) {
-      closeMenu(dropdowns);
+      closeMenu(options);
       openMenu($(this));
     }
     else {
@@ -63,32 +70,43 @@ function controlOption() {
     }
   });
 
-  //메뉴 선택시
-  dropdownList.on("click", function() {
-    const dropdown = $(this).parents(".dropdown");
-
-    let idx = dropdowns.index(dropdown);
-    let selectText = $(this).text();
+  //메뉴 아이템 선택 시 다른 옵션의 선택 가능 여부 변경
+  optionItems.on("click", function() {
+    const optionMenu = $(this).parents(".dropdown");
+    let optionIdx = options.index(optionMenu);
 
     //선택 메뉴 표시
-    dropdown.children("p").text(selectText);
+    let selectText = $(this).html();
+    optionMenu.children("p").html(selectText);
 
-    if (idx < dropdowns.length-1) { //마지막 옵션이 아닐 때
+    //선택 인덱스 저장
+    let selectIdx = $(this).index();
+    selectOption[optionIdx] = selectIdx;
+
+    if (optionIdx === options.length-2) {
+      displayAddPrice();
+    }
+
+    if (optionIdx < options.length-1) { //마지막 옵션이 아닐 때
       //다음 옵션을 선택 가능하게 하고, 이후 옵션들을 초기화
-      dropdowns.eq(idx+1).addClass("selectable");
-      dropdowns.slice(idx+2).removeClass("selectable");
-      clearMenuText(dropdowns.slice(idx+1));
+      options.eq(optionIdx+1).addClass("selectable");
+      options.slice(optionIdx+2).removeClass("selectable");
+      clearMenuText(options.slice(optionIdx+1));
     }
     else { //마지막 옵션
-      clearOptions(dropdowns);
+      addOrder(selectOption);
+      clearOptions(options);
     }
   });
 
   //메뉴 이름 초기화
   function clearMenuText(menus) {
     menus.each((i, menu) => {
+      let optionIdx = options.index(menu);
       let defaultText = $(menu).siblings("p").text();
+
       $(menu).children("p").text("--- " + defaultText + " 선택 ---");
+      selectOption[optionIdx] = null;
     });
   }
 
@@ -100,6 +118,27 @@ function controlOption() {
     menus.first().addClass("selectable");
 
     clearMenuText(menus);
+  }
+
+  //추가 금액 표시
+  function displayAddPrice() {
+    const lastOptionItems = options.last().find(".dropdown-menu li");
+    
+    lastOptionItems.each((i, item) => {
+      const addPriceSpan = $(item).find(".add-price");
+    
+      let select = Array.from(selectOption);
+      select[select.length-1] = i;
+
+      let addPrice = calcAddPrice(select);
+      if (addPrice > 0) {
+        let addPriceTxt = makePriceStr(addPrice);
+        addPriceSpan.text(`(+${addPriceTxt})`);
+      }
+      else {
+        addPriceSpan.text("");
+      }
+    });
   }
 }
 
@@ -125,18 +164,104 @@ function addProductEvent() {
   });
 }
 
+//후기 작성
+function writeReview() {
+  const writeContainer = $(".product-review-section .review-write-container");
+  const reviewStar = writeContainer.find(".star-dropdown");
+  const reviewStarItems = reviewStar.find(".dropdown-menu li");
+  const writerInput = writeContainer.find("#review-writer");
+  const pwInput = writeContainer.find("#review-pw");
+  const reviewTxtArea = writeContainer.find(".review-txt");
+  const policyChkbox = writeContainer.find("#chk-review-policy");
+
+  const writeBtnBox = writeContainer.find(".review-write-btn-box");
+
+  reviewStar.on("click", function() {
+    let currentHeight = $(this).children(".dropdown-menu").innerHeight();
+
+    if (currentHeight == 0) {
+      openMenu($(this));
+    }
+    else {
+      closeMenu($(this));
+    }
+  });
+
+  reviewStarItems.on("click", function() {
+    let selectText = $(this).html();
+
+    //선택 메뉴 표시
+    reviewStar.children("p").html(selectText);
+  });
+
+  writeBtnBox.on("click", ".review-register-btn", () => {
+    let star = reviewStar.find("p i").filter(".fa-solid").length;
+    let writer = writerInput.val();
+    let pw = pwInput.val();
+    let reviewTxt = reviewTxtArea.val();
+    let policyChecked = policyChkbox.prop("checked");
+
+    if (!writer) {
+      alert("작성자를 입력해주세요.");
+      writerInput.focus();
+      return;
+    }
+    else if (!pw) {
+      alert("비밀번호를 입력해주세요.");
+      pwInput.focus();
+      return;
+    }
+    else if (!policyChecked) {
+      alert("개인 정보 이용에 동의하셔야 리뷰를 등록할 수 있습니다.");
+      return;
+    }
+    else if (!reviewTxt) {
+      alert("등록할 내용이 없습니다.");
+      reviewTxtArea.focus();
+      return;
+    }
+
+    addReview(star, writer, pw, null, reviewTxt);
+    alert("리뷰 등록이 완료되었습니다.\n입력한 비밀번호로 수정/삭제할 수 있습니다.");
+    clearReviewWrite();
+  });
+}
+
 //상품 후기 섹션 이벤트 추가
-function controlReviewSection() {
-  //후기 작성
-  const reviewStar = $(".product-review-section .review-write-container .star-dropdown")
-
-  addMenuChangeTxtEvent(reviewStar);
-
-
-  //후기 정렬
+function addReviewEvent() {
+  //후기 정렬메뉴
   const reviewSorting = $(".product-review-section .review-list-container .review-list-info .review-sorting");
+  const sortingItems = reviewSorting.find(".dropdown-menu li");
 
-  addMenuChangeTxtEvent(reviewSorting);
+  reviewSorting.on("click", function() {
+    let currentHeight = $(this).children(".dropdown-menu").innerHeight();
+
+    if (currentHeight == 0) {
+      openMenu($(this));
+    }
+    else {
+      closeMenu($(this));
+    }
+  });
+
+  sortingItems.on("click", function() {
+    let selectText = $(this).html();
+    let selectIdx = $(this).index();
+
+    //선택 메뉴 표시
+    reviewSorting.children("p").html(selectText);
+    
+    sortingReview(selectIdx);
+    changeReviewPage(1);
+  });
+
+  //포토리뷰만 보기
+  const photoChkBox = $(".product-review-section .review-list-container .review-list-info #chk-only-photo");
+
+  photoChkBox.on("change", () => {
+    filteringPhotoReview();
+    changeReviewPage(1);
+  });
 
 
   //후기 리스트
@@ -154,12 +279,6 @@ function controlReviewSection() {
     $(this).parents(".review").removeClass("expand-review");
     $(this).siblings(".review-expand-btn").show();
     $(this).hide();
-  });
-
-  //수정, 삭제 버튼 클릭 시 비밀번호 입력 화면 표시
-  reviewList.on("click", ".review .review-control-btn", function() {
-    $(".modal-pw-bg").css("display", "flex");
-    $(".modal-pw input[type=text]").focus();
   });
 }
 
@@ -190,16 +309,17 @@ function addFixBtnEvent() {
 //비밀번호 입력 창 이벤트 추가
 function addPasswordEvent() {
   const pwBg = $(".modal-pw-bg");
-  const closeBtn = $(".modal-pw .modal-close-btn");
 
   //닫기 버튼 클릭 시 닫음
-  closeBtn.on("click", function() {
+  pwBg.on("click", ".modal-pw .modal-close-btn", function() {
+    $(this).parents(".modal-pw").remove();
     pwBg.css("display", "none");
   });
 
   //배경 클릭 시 닫기
   pwBg.on("click", function(e) {
     if (e.target === e.currentTarget) {
+      $(this).find(".modal-pw").remove();
       pwBg.css("display", "none");
     }
   });
@@ -210,15 +330,81 @@ function addPasswordEvent() {
   });
 }
 
+//문의 작성
+function writeQna() {
+  const writeContainer = $(".modal-qna .qna-write-container");
+  const writerInput = writeContainer.find("#qna-writer");
+  const pwInput = writeContainer.find("#qna-pw");
+  const titleInput = writeContainer.find("#qna-title");
+  const qnaTxtArea = writeContainer.find(".qna-txt textarea");
+  const secretChkbox = writeContainer.find("#chk-qna-secret");
+  const policyChkbox = writeContainer.find("#chk-qna-policy");
+
+  const writeBtnBox = writeContainer.find(".qna-write-btn-box");
+
+  //문의 작성
+  writeBtnBox.on("click", ".qna-register-btn", function() {
+    let writer = writerInput.val();
+    let pw = pwInput.val();
+    let title = titleInput.val();
+    let qnaTxt = qnaTxtArea.val();
+    let isSecret = secretChkbox.prop("checked");
+    let policyChecked = policyChkbox.prop("checked");
+
+    if (!writer) {
+      alert("작성자를 입력해주세요.");
+      writerInput.focus();
+      return;
+    }
+    else if (!pw) {
+      alert("비밀번호를 입력해주세요.");
+      pwInput.focus();
+      return;
+    }
+    else if (!policyChecked) {
+      alert("개인 정보 이용에 동의하셔야 리뷰를 등록할 수 있습니다.");
+      return;
+    }
+    else if (!title) {
+      alert("제목을 입력해주세요.");
+      titleInput.focus();
+      return;
+    }
+    else if (!qnaTxt) {
+      alert("등록할 내용이 없습니다.");
+      qnaTxtArea.focus();
+      return;
+    }
+
+    addQna(writer, pw, title, null, qnaTxt, isSecret);
+    alert("문의 등록이 완료되었습니다.\n입력한 비밀번호로 수정/삭제할 수 있습니다.");
+    clearQnaWrite();
+    $(".modal-qna-bg").css("display", "none");
+  });
+}
+
 //문의 작성 창 이벤트 추가
 function addQnaModalEvent() {
+  const qnaBtn = $(".product-qna-section .qna-btn");
   const qnaBg = $(".modal-qna-bg");
-  const chkQna = $("#chk-qna-write");
+  const closeBtn = $(".modal-qna .modal-title .modal-close-btn");
+
+  //문의 작성 창 열기
+  qnaBtn.on("click", function() {
+    qnaBg.css("display", "flex");
+  });
+
+  //닫기 버튼 클릭 시 닫기
+  closeBtn.on("click", function() {
+    clearQnaWrite();
+    qnaBg.css("display", "none");
+  });
 
   //배경 클릭 시 닫기
   qnaBg.on("click", function(e) {
     if (e.target === e.currentTarget) {
-      chkQna.prop("checked", false);
+      clearQnaWrite();
+      $(this).css("display", "none");
     }
   });
 
@@ -248,14 +434,18 @@ function closeMenu(dropdown, speed=100) {
   }, speed);
 }
 
-//드롭다운 메뉴 선택 시 텍스트 변경 이벤트 추가
-function addMenuChangeTxtEvent(dropdown) {
-  const dropdownItems = dropdown.find(".dropdown-menu li");
+//가격을 화면에 표시할 문자열로 변경
+//price: 가격(Number)
+//return: ,과 '원'이 포함된 가격 문자열
+function makePriceStr(price) {
+  let priceArr = new Array(...price.toString());
+  let length = priceArr.length;
 
-  dropdownItems.on("click", function() {
-    let selectText = $(this).html();
-
-    //선택 메뉴 표시
-    dropdown.children("p").html(selectText);
+  let priceStr = priceArr.reduce((prev, cur, idx) => {
+    if ((length-idx)%3 === 0)
+      prev += ",";
+    return prev += cur;
   });
+  
+  return priceStr + "원";
 }

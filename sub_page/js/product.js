@@ -1,4 +1,4 @@
-const response = await fetch("../../data/products.json");
+const response = await fetch("../data/products.json");
 const allProducts = await response.json();
 
 let products = new Array(...allProducts);
@@ -226,39 +226,39 @@ function displayProduts(page = curPage) {
 
     productSection.appendChild(productEl);
   });
+}
 
-  //상품 이벤트 추가
-  function addProductEvent(productEl) {
-    productEl = $(productEl);
-    const productIcons = productEl.find(".product-icon li");
+//상품 이벤트 추가
+function addProductEvent(productEl) {
+  productEl = $(productEl);
+  const productIcons = productEl.find(".product-icon li");
 
-    //상품 클릭 시 상세페이지로
-    productEl.on("click", function() {
-      window.open("../detail_page/detail_page.html", "_blank").focus();
-    });
+  //상품 클릭 시 상세페이지로
+  productEl.on("click", function() {
+    window.open("../detail_page/detail_page.html", "_blank").focus();
+  });
 
-    //관심 아이콘 클릭 시 이동하지 않음
-    productIcons.eq(0).on("click", function() {
-      return false;
-    });
+  //관심 아이콘 클릭 시 이동하지 않음
+  productIcons.eq(0).on("click", function() {
+    return false;
+  });
 
-    //옵션 아이콘 클릭 시 옵션 표시
-    productIcons.eq(1).on("click", function() {
-      $(this).parent().siblings(".product-option").toggle();
-      return false;
-    });
+  //옵션 아이콘 클릭 시 옵션 표시
+  productIcons.eq(1).on("click", function() {
+    $(this).parent().siblings(".product-option").toggle();
+    return false;
+  });
 
-    //상품에서 마우스가 나가면 옵션 비표시
-    productEl.on("mouseleave blur", function() {
-      $(this).find(".product-option").hide();
-    });
-    
-    //장바구니 아이콘 클릭 시 장바구니 모달창 표시
-    productIcons.eq(2).on("click", function() {
-      $(".modal-cart-bg").css("display", "flex");
-      return false;
-    });
-  }
+  //상품에서 마우스가 나가면 옵션 비표시
+  productEl.on("mouseleave blur", function() {
+    $(this).find(".product-option").hide();
+  });
+  
+  //장바구니 아이콘 클릭 시 장바구니 모달창 표시
+  productIcons.eq(2).on("click", function() {
+    $(".modal-cart-bg").css("display", "flex");
+    return false;
+  });
 }
 
 //페이지네이션 화면에 표시
@@ -322,8 +322,7 @@ export function filteringByPrice(minPrice, maxPrice) {
     let min = minPrice ? product.price.price >= minPrice : true;
     let max = maxPrice ? product.price.price <= maxPrice : true;
     return min && max;
-  }
-  );
+  });
 
   sorting();
 }
