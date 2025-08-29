@@ -1,0 +1,46 @@
+[
+  {
+    "productId": "bd10036",
+    "condition": [
+      {
+        "idx": 0,
+        "optionIdx": [1]
+      }
+    ],
+    "addPrice": 50000
+  },
+  {
+    "productId": "bd10036",
+    "condition": [
+      {
+        "idx": 0,
+        "optionIdx": [1]
+      },
+      {
+        "idx": 1,
+        "optionIdx": [1, 2]
+      }
+    ],
+    "addPrice": 20000
+  },
+  {
+    "productId": "bd10036",
+    "condition": [
+      {
+        "idx": 1,
+        "optionIdx": [1]
+      }
+    ],
+    "addPrice": 90000
+  },
+  {
+    "productId": "bd10036",
+    "condition": [
+      {
+        "idx": 1,
+        "optionIdx": [2]
+      }
+    ],
+    "addPrice": 130000
+  }
+]
