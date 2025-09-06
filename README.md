@@ -4,46 +4,40 @@ pc / mobile 두 버전의 적응형 웹으로 제작
 <br>
 
 ### 배포 주소
-[PC 버전]()  
-[mobile 버전]()  
-<br>
-
-### 기획서 
-[기획서]()  
-[스타일 가이드]()  
-[로그인/회원가입 시스템 스토리 보드 및 플로우 차트]()  
+[PC 버전 (http://sunggabin.dothome.co.kr/)](http://sunggabin.dothome.co.kr/)  
+[모바일 버전](https://sleeping-gabin.github.io/gomgom-mobile/)  
 <br>
 
 ### 사용 기술
 ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![css](https://img.shields.io/badge/CSS3-663399?style=for-the-badge&logo=css3&logoColor=white)
+![css](https://img.shields.io/badge/CSS3-663399?style=for-the-badge&logo=css&logoColor=white)
 ![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
 ![jquery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)  
 <br>
 
 ### 프로젝트 진행
 - 2025.03.31 ~ 2025.04.23 : 기획
-- 2025.05.07 ~ 2025.05.16 : pc 사이트 개발
-- 2025.??.?? ~ ~ 2025.06.05? : jQuery, js 이벤트 추가
+- 2025.05.07 ~ 2025.05.21 : pc 사이트 개발
 - 2025.07.02 ~ 2025.07.11 : 로그인/회원가입 시스템 추가  
+- 2025.07.08 ~ 2025.07.15 : 데이터바인딩
 
 <br><br>
 
 ## 페이지
-|메인 페이지      |서브 페이지      |상세 페이지       |
-|:-------------:|:--------------:|:--------------:|
-|![메인]()|![서브]()|![상세]()|
+|메인 페이지 |서브 페이지 |상세 페이지 |
+|:---:|:---:|:---:|
+|![메인](https://github.com/user-attachments/assets/83dd7f7f-78ab-425d-922c-216791bbfe4b)|![서브](https://github.com/user-attachments/assets/6a5faeee-f307-4f30-8955-888517ff44df)|![상세](https://github.com/user-attachments/assets/9381d6c6-5402-4ac1-bf7c-c51b95ac2270)|
+|로그인 |회원가입 |아아디/비밀번호 찾기|
+![로그인](https://github.com/user-attachments/assets/8aa88fd0-6f38-41b7-ad00-614adc639e68)|![회원가입](https://github.com/user-attachments/assets/a2a5b451-a652-4c5e-bc4e-f7c8a78388f1)|![비밀번호 찾기](https://github.com/user-attachments/assets/d06c8c5d-65a0-4678-9cff-d1c3eaddb8a9)|
 
 <br><br>
 
 ## 기능
 ### 상품 목록 필터링
-<details>
-<summary>상세 설명</summary>
-
-![필터링]
-
 change 이벤트가 발생하면 입력한 최소/최대 가격 사이의 상품만 필터링한다.  
+
+<details>
+<summary>코드 보기</summary>  
 
 ```js
 // sub_page/js/product.js
@@ -58,76 +52,76 @@ export function filteringByPrice(minPrice, maxPrice) {
   sorting();
 }
 ```
-<br>
 </details>
 
+![필터링](https://github.com/user-attachments/assets/8ce57aa2-d1ac-4e79-a256-1d4e28a2ed1a)  
+<br>
+
 ### 상품 목록 정렬
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
 드롭다운 목록에서 선택한 정렬 방법에 따라 상품 목록을 정렬한다.  
 비교 대상이 같은 경우 id순으로 정렬되게 하였다.  
+
+<details>
+<summary>코드 보기</summary>
 
 ```js
 // sub_page/js/product.js
 
 export function sorting(methodIdx = sortingIdx) {
-switch(methodIdx) {
-  case(0): //최신순
-    products.sort((p1, p2) => {
-      if (p1.regDate > p2.regDate)
-        return -1;
-      else if (p1.regDate < p2.regDate)
-        return 1;
-      else
-        return p1.id - p2.id;
-    });
-    break;
-
-  case(1): //인기순
-    products.sort((p1, p2) => {
-      if (p1.purchase == p2.purchase)
-        return p1.id - p2.id;
-      else
-        return p2.purchase - p1.purchase;
+  switch(methodIdx) {
+    case(0): //최신순
+      products.sort((p1, p2) => {
+        if (p1.regDate > p2.regDate)
+          return -1;
+        else if (p1.regDate < p2.regDate)
+          return 1;
+        else
+          return p1.id - p2.id;
       });
-    break;
+      break;
 
-  case(2): //낮은 가격순 
-    products.sort((p1, p2) => {
-      if (p1.price.price == p2.price.price)
-        return p1.id - p2.id;
-      else
-        return p1.price.price - p2.price.price;
-    });
-    break;
+    case(1): //인기순
+      products.sort((p1, p2) => {
+        if (p1.purchase == p2.purchase)
+          return p1.id - p2.id;
+        else
+          return p2.purchase - p1.purchase;
+        });
+      break;
 
-  case(3): //높은 가격순
-    products.sort((p1, p2) => {
-      if (p1.price.price == p2.price.price)
-        return p1.id - p2.id;
-      else
-        return p2.price.price - p1.price.price;
-    });
-    break;
-}
-...
+    case(2): //낮은 가격순 
+      products.sort((p1, p2) => {
+        if (p1.price.price == p2.price.price)
+          return p1.id - p2.id;
+        else
+          return p1.price.price - p2.price.price;
+      });
+      break;
+
+    case(3): //높은 가격순
+      products.sort((p1, p2) => {
+        if (p1.price.price == p2.price.price)
+          return p1.id - p2.id;
+        else
+          return p2.price.price - p1.price.price;
+      });
+      break;
+  }
+  // ...
 }
 ```
-<br>
 </details>
 
+![정렬](https://github.com/user-attachments/assets/2398cf1b-bb12-4c12-9d1d-cb3a75b743b1)  
+<br>
+
 ### 로그인 시스템
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
 저장된 유저 정보와 일치하는 아이디, 비밀번호 입력 시 로그인이 가능하다.  
 (로그인 정보는 다른 페이지에서 유지되지 않는다.)  
 테스트용 유저 - (박영희) ID: zerohye / PW: 00dudgml00  
+
+<details>
+<summary>코드 보기</summary>
 
 ```js
 // login/js/login.js
@@ -148,7 +142,7 @@ async function init() {
 }
 
 function login(idPwMap, idNameMap) {
-  ...
+  // ...
   
   loginBtn.addEventListener("click", () => {
     let id = idInput.value;
@@ -172,31 +166,27 @@ function login(idPwMap, idNameMap) {
     }
   });
 }
-
 ```
-<br>
 </details>
 
+<div>
+  <img src="https://github.com/user-attachments/assets/8aa88fd0-6f38-41b7-ad00-614adc639e68" width="600px">    
+</div>
+<br>
+
 ### 회원가입 시스템
-<details>
-<summary>상세 소개</summary>
-
-![테스트](test.JPG)
-
 각 입력 항목의 조건을 만족하지 않으면 오류 메시지가 뜬다.  
 휴대폰 번호와 생년월일/성별의 경우, 숫자 외의 입력을 제거하고 일정 자릿수 입력 시 자동으로 다음 칸으로 넘어간다.  
-오류 없이 필수 항목을 다 입력하면 회원가입을 할 수 있다.  
 (실제로 회원 정보가 저장되진 않는다.)  
+
+<details>
+<summary>코드 보기</summary>
 
 ```js
 // join/js/join.js
 
 function checkPw() {
-  ...
-
-  pwInput.addEventListener("keyup", () => {
-    pwInput.value = pwInput.value.replaceAll(" ", "");
-  });
+  // ...
 
   pwInput.addEventListener("change", () => {
     let userPW = pwInput.value;
@@ -222,21 +212,9 @@ function checkPw() {
       }
     }
 
-    if (errorMsg) {
-      errorTxt.innerHTML = errorMsg;
-      pwInput.classList.add("error");
-      pwInput.select();
-    }
-    else {
-      errorTxt.innerHTML = "";
-      pwInput.classList.remove("error");
-    }
+    // ...
   });
 }
-```
-
-```js
-// join/js/join.js
 
 function checkCall() {
   const calls = document.querySelectorAll(".join-form .call-item input");
@@ -252,7 +230,6 @@ function checkCall() {
   });
 }
 
-
 function limitInputNum(input) {
   input.addEventListener("keydown", () => {
     input.value = input.value.replaceAll(/\D/g, "");
@@ -262,41 +239,29 @@ function limitInputNum(input) {
     input.value = input.value.replaceAll(/\D/g, "");
   });
 }
-```
-<br>
+```  
 </details>
+
+<div>
+  <img src="https://github.com/user-attachments/assets/a2a5b451-a652-4c5e-bc4e-f7c8a78388f1" width="600px">    
+</div>
+<br>
 
 ### 아이디 찾기 / 비밀번호 찾기
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
 이메일 또는 전화번호로 아이디/비밀번호를 찾을 수 있다.  
 테스트용 유저 - (박영희) 전화번호: 010 9876 0000 / 이메일: youngH @ naver.com  
+
+<div>
+  <img src="https://github.com/user-attachments/assets/49348e7f-bf62-407a-bf7a-a302d979f208" width="600px">    
+</div>
 <br>
-</details>
 
 ### 후기/문의 작성
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
-후기/문의를 입력하고 등록 버튼을 누르면 목록에 element가 생성된다.  
+후기/문의를 입력하고 등록 버튼을 누르면 목록에 생성된다.  
 필터링과 정렬을 할 수 있다.  
 
-```js
-// detail_page/js/detail.js
-
-writeBtnBox.on("click", ".review-register-btn", () => {
-  ...
-
-  addReview(star, writer, pw, null, reviewTxt);
-  alert("리뷰 등록이 완료되었습니다.\n입력한 비밀번호로 수정/삭제할 수 있습니다.");
-  clearReviewWrite();
-});
-```
+<details>
+<summary>코드 보기</summary>
 
 ```js
 // detail_page/js/write.js
@@ -326,23 +291,6 @@ export function addReview(star, writer, pw, photos, text, date, id) {
   changeReviewPage(1);
 }
 
-export function changeReviewPage(page = curReviewPage) {
-  const reviewEls = reviewSection.querySelectorAll(".review-list-container .review-list .review");
-  reviewEls.forEach(reviewEl => reviewEl.remove());
-  
-  const pageLis = reviewSection.querySelectorAll(".pagination .page li");
-  const pageArrows = reviewSection.querySelectorAll(".pagination .page-arrow");
-  pageLis.forEach(pageLi => pageLi.remove());
-  pageArrows.forEach(arrow => arrow.style.display = "none");
-
-  if (reviews.length > 0) {
-    displayReview(page);
-    displayPagination(reviewSection, reviewGroup.length, page);
-  }
-
-  curReviewPage = page;
-}
-
 function displayReview(page) {
   const reviewUl = reviewSection.querySelector(".review-list-container .review-list");
 
@@ -353,61 +301,38 @@ function displayReview(page) {
     addReviewEvent(reviewEl, idx);
   });
 }
+
+function createReviewEl(review) {
+  const reviewEl = document.createElement("li");
+  reviewEl.setAttribute("class", "review");
+
+  const reviewTop = document.createElement("div");
+  reviewTop.setAttribute("class", "review-top");
+
+  const reviewStar = document.createElement("p");
+  reviewStar.setAttribute("class", "review-star");
+
+  // ...
+
+  reviewEl.appendChild(reviewBottom);
+
+  return reviewEl;
+}
 ```
-<br>
 </details>
 
+|![후기 작성](https://github.com/user-attachments/assets/d72580d8-f792-466d-a611-eb3204d65118)|![문의 작성](https://github.com/user-attachments/assets/7947b4c9-daa8-4d68-acd1-1737238a9d71)|
+|:---:|:---:|
+
+<br>
+
 ### 후기/문의 수정, 삭제
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
 비밀번호를 입력하면 수정 또는 삭제가 가능하다.  
 수정 시 후기/문의 내용이 입력란에 입력되고, 수정 후 버튼을 눌러 저장할 수 있다.  
 (각 비밀번호는 등록 날짜 네자리 수로 설정되어 있다.)  
 
-```js
-// detail_page/js/write.js
-
-function addReviewEvent(reviewEl, idx) {
-  const deleteBtn = reviewEl.querySelector(".review-delete-btn");
-  const modifyBtn = reviewEl.querySelector(".review-modify-btn");
-
-  deleteBtn.addEventListener("click", () => {
-    ...
-
-    okBtn.addEventListener("click", () => {
-      let result = deleteReview(idx, pwInput.value);
-      if (result < 0) {
-        alert("비밀번호가 일치하지 않습니다.");
-        pwInput.select();
-      }
-      else {
-        alert("리뷰가 삭제되었습니다.");
-        pwBg.removeChild(modalPwEl);
-        pwBg.style.display = "none";
-      }
-    });
-  });
-
-  modifyBtn.addEventListener("click", () => {
-    ...
-
-    okBtn.addEventListener("click", () => {
-      let result = modifyReview(idx, pwInput.value);
-      if (result < 0) {
-        alert("비밀번호가 일치하지 않습니다.");
-        pwInput.select();
-      }
-      else {
-        pwBg.removeChild(modalPwEl);
-        pwBg.style.display = "none";
-      }
-    });
-  });
-}
-```
+<details>
+<summary>코드 보기</summary>
 
 ```js
 // detail_page/js/write.js
@@ -419,29 +344,10 @@ function modifyReview(idx, pw) {
     return -1;
   }
   
-  ...
-  //리뷰 내용 복사 + 버튼 변경
+  // ... 리뷰 내용 복사 + 버튼 변경
 
   modifyBtn.addEventListener("click", () => {
-    let star = reviewStar.querySelectorAll("p i.fa-solid").length;
-    let pw = pwInput.value;
-    let reviewTxt = reviewTxtArea.value;
-    let policyChecked = policyChkbox.checked;
-
-    if (!pw) {
-      alert("비밀번호를 입력해주세요.");
-      pwInput.focus();
-      return;
-    }
-    else if (!policyChecked) {
-      alert("개인 정보 이용에 동의하셔야 리뷰를 등록할 수 있습니다.");
-      return;
-    }
-    else if (!reviewTxt) {
-      alert("등록할 내용이 없습니다.");
-      reviewTxtArea.focus();
-      return;
-    }
+    // ... 입력 항목 검사
 
     deleteReview(idx, pw);
     addReview(star, review.writer, pw, review.photo, reviewTxt, review.date, review.id);
@@ -449,12 +355,7 @@ function modifyReview(idx, pw) {
     alert("수정이 완료되었습니다.");
     clearReviewWrite();    
   });
-
-  cancelBtn.addEventListener("click", () => {
-    clearReviewWrite();
-  });
   
-  reviewTxtArea.focus();
   return 0;
 }
 ```
@@ -481,130 +382,88 @@ function deleteReview(idx, pw) {
 ```
 </details>
 
+|![후기 수정](https://github.com/user-attachments/assets/ae977f96-20a3-4ec7-81ea-6f2a1eeb234b)|![후기 삭제](https://github.com/user-attachments/assets/49668ca0-654e-402d-94b3-38283eca19d7)|
+|:-------------:|:--------------:|
+
 <br><br>
 
-## 구현 내용
-### 비주얼 메인 swiper
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
-[swiper](https://swiperjs.com/) 라이브러리를 이용해 비주얼 메인을 구현했다.  
-비주얼 메인 슬라이드가 변경될 때마다 제목에 애니메이션이 들어간다.  
-
+## 데이터 구조
+### 상품(product)
 ```js
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  speed: 500,
-  effect: "slide",
-
-  autoplay: {
-    delay: 4500,
-    disableOnInteraction: false,
+{
+  "id": String, //아이디
+  "img": String, //이미지 파일명
+  "category": String, //카테고리
+  "title": String, //이름
+  "price": {
+    "origin": Number, //원가
+    "price": Number //판매가
   },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    hiddenClass: 'swiper-button-hidden',
-  },
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  on: {
-    slideChangeTransitionEnd: function(s) { 
-      let slide = s.slides[s.activeIndex];
-      let txt = slide.querySelector(".visual-txt");
-      let btn = slide.querySelector(".visual-enter-btn");
-      
-      txt.style.top = "90px";
-      txt.style.opacity = "1";
-
-      btn.style.bottom = "120px";
-      btn.style.opacity = "1";
-    },
-
-    slideChangeTransitionStart	: function(s) { 
-      let slide = s.slides[s.activeIndex];
-      let txt = slide.querySelector(".visual-txt");
-      let btn = slide.querySelector(".visual-enter-btn");
-      
-      txt.style.top = "120px";
-      txt.style.opacity = "0";
-
-      btn.style.bottom = "90px";
-      btn.style.opacity = "0";
-    },
-  },
-});
+  "color": String[]|null, //색상 종류
+  "option": [ //옵션 종류
+    {
+      "id": Number, //아이디
+      "name": String, //이름
+      "option": String[] //선택 가능한 옵션 아이템
+    }
+  ],
+  "regDate": String, //등록일 YYYY-MM-DD
+  "view": Number, //본 횟수
+  "purchase": Number //구매 횟수
+}
 ```
 <br>
-</details>
 
-### 상품 element 동적 생성 및 페이지네이션
-<details>
-<summary>상세 설명</summary>
-
-![테스트](test.JPG)
-
-fetch API를 통해 데이터를 가져오고,  
-페이지 별로 분류하여 페이지가 변경되면 해당하는 상품 element를 생성하여 보여준다.  
-
+### 유저(user)
 ```js
-// sub_page/js/product.js
-
-const response = await fetch("../data/products.json");
-const allProducts = await response.json();
-
-let products = new Array(...allProducts);
-let productsGroup = [];
-
-export function sorting(methodIdx = sortingIdx) {
-  ...
-
-  productsGroup = [];
-  let idx = 0;
-  while (idx < products.length) {
-    productsGroup.push(products.slice(idx, idx+16));
-    idx += 16;
-  }
-}
-
-function displayProduts(page = curPage) {
-  const productSection = document.querySelector(".product-section");
-
-  productsGroup[page-1].forEach(product => {
-    let productEl = createProductEl(product);
-    addProductEvent(productEl);
-
-    productSection.appendChild(productEl);
-  });
-}
-
-function createProductEl(product) {
-  const productEl = document.createElement("div");
-  productEl.setAttribute("class", "product");
-
-  const productImgEl = document.createElement("div");
-  productImgEl.setAttribute("class", "product-img");
-
-  const productImg = document.createElement("img");
-  let baseUrl = "images/"
-  productImg.setAttribute("src", baseUrl+product.img);
-  productImg.setAttribute("alt", "상품"+product.id);
-
-  productImgEl.appendChild(productImg);
-
-  ...
-
-  return productEl;
+{
+  "id": String, //아이디
+  "pw": String, //비밀번호
+  "name": String, //이름
+  "call": String, //전화번호(숫자 7자리)
+  "email": String, //이메일
+  "address": { //주소
+    "post": String, //우편번호(숫자 5자리)
+    "base": String, //기본 주소
+    "detail": String //상세 주소
+  }|null,
+  "birth": String|null, //생년월일 YYYY-MM-DD
+  "gender": "M"|"F"|null //성별
 }
 ```
-</details>
+<br>
+
+### 문의(qna)
+```js
+{
+  "id": Number, //아이디
+  "title": String, //제목
+  "question": String, //문의 내용
+  "answer": String|null, //답변 내용
+  "file": String[]|null, //첨부 파일명
+  "isSecret": Boolean, //비밀 문의 여부
+  "date": String, //등록 날짜 YYYY-MM-DD
+  "userId": String|null, //로그인 유저 아이디
+  "writer": String, //작성자 이름
+  "pw": String //문의 비밀번호
+}
+```
+<br>
+
+### 후기(review)
+```js
+{
+  "id": Number, //아이디
+  "star": Number, //별점(0~5)
+  "option": String, //구매한 옵션
+  "photo": String[]|null, //첨부 사진
+  "text": String, //리뷰 내용
+  "date": String, //등록 날짜 YYYY-MM-DD
+  "userId": String|null, //로그인 유저 아이디
+  "writer": String, //작성자 이름
+  "pw": String //문의 비밀번호
+}
+```
 
 <br><br>
 
